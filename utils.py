@@ -1,26 +1,20 @@
 """
-@Author: Paula Andrea PÃ©rez Toro <PauPerezT>
+@Author: Paula Andrea Perez Toro <PauPerezT>
 @Date:   2018-11-27T20:36:36-05:00
-@Email:  paulaperezt16@gmail.com
-@Filename: NLP_PreProcessing.py
-# @Last modified by:   Paula Andrea PÃ©rez Toro
+@Email:  paula.perezt@udea.edu.co
+@Filename: utils.py
+# @Last modified by:   Paula Andrea Perez Toro
 # @Last modified time: 2018-12-03T21:45:52-05:00
 
 """
-###English implementation in progress
 """
 #%%%%%%% Natural Language Basic preprocessing code %%%%%%%#
 
     #%% Contains %%#
         *noPunctuation: to eliminate the Punctuation
-	*noPunctuationExtra: to eliminate the Punctuation related to spanish symbols
+        PunctuationExtra: to eliminate the Punctuation related to spanish symbols
         *StopWordsRemoval: to eliminate stopwords
-        *Lemmatizer: transform the word to its root
         *HesitationsRemoval: to remove hesitation labels (for example: [h mm])
-
-    #%% Variables %%#
-        - Text: text to preprocess
-        - Language: 'spanish' or 'english'
 
 """
 
@@ -32,7 +26,13 @@ import unicodedata
 import re
 #%% noPunctuation
 def noPunctuation(text):
-    #eliminate the punctuation in form of characters
+    
+    """
+    Remove the punctuation
+    :param text: input text
+    :returns: text without punctuations given by the string function
+    """    
+    #
     nopunctuation= [char for char in text if char not in string.punctuation]
 
     #Now eliminate the punctuation and convert into a whole sentence
@@ -45,6 +45,12 @@ def noPunctuation(text):
     return nopunctuation
 
 def noPunctuationExtra(text):
+        
+    """
+    Remove the other special punctuation characters
+    :param text: input text
+    :returns: text without customized punctuations 
+    """  
     
     texttoP=text
     #Just for this app without '.'
@@ -60,33 +66,35 @@ def noPunctuationExtra(text):
                 else:
                     texttoP=texttoP.replace(texttoP[idx[j]],' ')
                 
-    #print(texttoP)
+
     return texttoP
 
 #%% StopWordsRemoval
 def StopWordsRemoval(text,language='english'):
+            
+    """
+    Remotion of stopwords
+    :param text: input text
+    :param language: input language (english).
+    :returns: text without stopwords
+    """  
     #Now eliminate stopwords
     clean_sentence= [word for word in text.split() if word.lower() not in stopwords.words(language)]
     clean_sentence=' '.join(clean_sentence)
 
     return clean_sentence
 
-#%% Lemmatizer
-def Lemmatizer(text,language='spanish'):
-    #nlp = spacy.load('es_core_news_sm')
-    nlp = spacy.load('es_core_news_md')
-    doc = nlp(text)
-    tokenLemma=[]
 
-    for token in doc:
-        #print(token, token.lemma, token.lemma_)
-        tokenLemma.append(token.lemma_)
-    tokenLemma=' '.join(tokenLemma)
-    return tokenLemma
 
 #%% HesitationsRemoval
 
 def HesitationsRemoval(text):
+    """
+    Hesitation removal. Remove this parts of text between [] that are consider hesitation, labels, marks or indicators that not provide relevan information.
+    :param text: input text
+
+    :return text without hesitations
+    """
 
     idx1=[n for n in range(len(text)) if text.find('[', n) == n]
     idx2=[n for n in range(len(text)) if text.find(']', n) == n]
@@ -123,36 +131,8 @@ def HesitationsRemoval(text):
         idx2=[n for n in range(len(text)) if text.find(')', n) == n]
         idxlen=len(idx1)
         idxlen2=len(idx2)
-        #print(idx1)
-
-
-    #print(text)
-    return text
-
-
-#%% spk1Removal
-
-def spk1Removal(text):
-
-
-
-    text=text.replace('spk1',"")
-    text=text.replace(' AH '," ")
-    text=text.replace(' EH '," ")
 
     return text
-#%% toLowerCase
-
-def toLowerCase(text):
-    text=text.lower()
-    return text
 
 
-#%% accentRemoval
-    
 
-def accentRemoval(df):
-    trans_tab = dict.fromkeys(map(ord, u'\u0301\u0308'), None)
-    data = unicodedata.normalize('NFKC', unicodedata.normalize('NFKD', df).translate(trans_tab))
-
-    return data
