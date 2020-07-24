@@ -1,6 +1,6 @@
 
 # WEBERT
-Getting BERT embeddings from TRansformers.
+Getting BERT embeddings from Transformers.
 
 ## "WEBERT: Word EmbeddingExtraction using BERT"
 
