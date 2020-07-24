@@ -1,6 +1,6 @@
 
 
-# WEBERT <p align="leftr">
+# WEBERT <p align="center">
   <img src="https://github.com/PauPerezT/WEBERT/blob/master/logo_wb.png" width="100" title="logo">
 </p> 
 
