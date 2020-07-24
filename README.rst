@@ -18,4 +18,9 @@ From this repository::
 
     git clone https://github.com/PauPerezT/WEBERT
     
-    python setup.py
+Install
+^^^^^^^
+
+To install the requeriments, please run
+
+    install.sh
