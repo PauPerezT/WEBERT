@@ -1,7 +1,6 @@
 
 # WEBERT
-
-Android app for the project 
+Getting BERT embeddings from TRansformers.
 
 ## "WEBERT: Word EmbeddingExtraction using BERT"
 
