@@ -21,6 +21,6 @@ From this repository::
 Install
 ^^^^^^^
 
-To install the requeriments, please run
+To install the requeriments, please run::
 
     install.sh
