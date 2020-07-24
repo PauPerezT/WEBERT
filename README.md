@@ -2,7 +2,7 @@
 
 # WEBERT 
 
-![Image](https://github.com/PauPerezT/WEBERT/blob/master/logo_wb.png?raw=true)
+![Image](https://github.com/PauPerezT/WEBERT/blob/master/logo_web.png?raw=true)
 
 
 Getting BERT embeddings from Transformers.
