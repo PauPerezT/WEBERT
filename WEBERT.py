@@ -24,7 +24,7 @@ from sklearn.model_selection import train_test_split
 import torchvision as tv
 import os
 import argparse
-
+from torch.utils.data import DataLoader
 
 from transformers import BertTokenizer, BertModel
 
