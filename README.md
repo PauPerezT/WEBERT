@@ -1,8 +1,9 @@
 
 
-# WEBERT <p align="center">
-  <img src="https://github.com/PauPerezT/WEBERT/blob/master/logo_wb.png" width="100" title="logo">
-</p> 
+# WEBERT 
+
+![Image](https://github.com/PauPerezT/WEBERT/blob/master/logo_wb.png?raw=true)
+
 
 Getting BERT embeddings from Transformers.
 
