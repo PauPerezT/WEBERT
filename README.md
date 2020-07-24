@@ -1,6 +1,6 @@
 
 
-![alt text]() # WEBERT
+![alt text](https://github.com/PauPerezT/WEBERT/blob/master/logo.png) # WEBERT
 Getting BERT embeddings from Transformers.
 
 ## "WEBERT: Word EmbeddingExtraction using BERT"
