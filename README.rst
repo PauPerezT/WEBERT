@@ -18,9 +18,6 @@ It was test on linux.
 
 The code for this project is available at https://github.com/PauPerezT/WEBERT
 
-`Project Documentation <https://webert.readthedocs.io/en/latest/>`_
-
-
 From this repository::
 
     git clone https://github.com/PauPerezT/WEBERT
@@ -31,3 +28,5 @@ Install
 To install the requeriments, please run::
 
     install.sh
+    
+`Project Documentation <https://webert.readthedocs.io/en/latest/>`_
