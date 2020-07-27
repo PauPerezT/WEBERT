@@ -10,7 +10,9 @@ Getting BERT embeddings from Transformers.
 "WEBERT: Word Embedding using BERT"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-WEBERT is a python framework designed to help students in order to compute dynamic and static BERT embeddings using Transformers (https://github.com/huggingface/transformers). WEBERT is avalable for english and spanish (multilingual) models, as well as for base and large models. It also considered cased and lower-cased cases. The sentences are choosen according to the punctuation '.', to form composed sentences. If this punctuation is not available in the document, the entire document will be a single sentence. The static features are computed per each neuron based on the mean, standar deviation, kurtosis, skewness, min and max. The project is ongoing.
+WEBERT is a python toolkit designed to help students in order to compute dynamic and static Bidirectional Encoder Representations from Transformers (BERT) embeddings using Transformers (https://github.com/huggingface/transformers). WEBERT is avalable for english and spanish (multilingual) models, as well as for base and large models, and  cased and lower-cased cases. BETO and SciBERT are also avalaible here. BETO is a pretrained BERT model from spanish corpus (https://github.com/dccuchile/beto).SCIBERT is a pre-trained model on english scientific text (https://github.com/allenai/scibert). The static features are computed per each neuron based on the mean, standar deviation, kurtosis, skewness, min and max. The project is ongoing.
+
+The code for this project is available at https://github.com/PauPerezT/WEBERT
 
 From this repository::
 
