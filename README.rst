@@ -3,9 +3,6 @@
 WEBERT
 ========
 
-.. image:: https://github.com/PauPerezT/WEBERT/blob/master/logo_web.png?raw=true
-
-
 
 Getting BERT embeddings from Transformers.
 
