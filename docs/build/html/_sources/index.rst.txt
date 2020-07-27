@@ -51,35 +51,38 @@ To compute Bert embeddings automatically
     -s                                         Path to save the embeddings. 
     
                                                By default './bert_embeddings'
-    -bm                   Bert,Beto,SciBert    Choose between three different BERT models.
+    -bm                   Bert, Beto, SciBert  Choose between three different BERT models.
     
                                                By default BERT				             
-    -d                    True,False           Boolean value to get dynamic features= True.
+    -d                    True, False          Boolean value to get dynamic features= True.
     
                                                By default True.                                         
-    -st                   True,False           Boolean value to get static features= True from the
+    -st                   True, False          Boolean value to get static features= True from the
     
                                                embeddings such as mean, standard deviation, kurtosis,
                                                
                                                skeweness, min and max. By default False.                       
-    -l                    english,spanish      Chosen language (only available for BERT model).
+    -l                    english, spanish     Chosen language (only available for BERT model).
                                                By default english.                               
-    -sw                   True,False           Boolean value, set True if you want to remove
+    -sw                   True, False          Boolean value, set True if you want to remove
     
                                                stopwords. By default False.                                         
-    -m                    base,large           Bert models, two options base and large.
+    -m                    base, large          Bert models, two options base and large.
      
                                                By default base.                                   
-    -c                    True,False           Boolean value for cased= True o lower-cased= False
+    -c                    True, False          Boolean value for cased= True o lower-cased= False
     
-                                               models. No avalaible for SciBert. By defaul False.                     
+                                               models. No avalaible for SciBert. By defaul False.
+    -cu                    True, False         Boolean value for using cuda to compute the 
+                                                
+                                               embeddings (True). By defaul False.                                                   
     ====================  ===================  =====================================================================================
 
 
         
 Usage example:: 
 
-        python get_embeddings.py -f ./texts/ -s ./bert_embs -bm Bert -d True -st True -l english -sw True -m base -c True
+        python get_embeddings.py -f ./texts/ -s ./bert_embs -bm Bert -d True -st True -l english -sw True -m base -c True -cu True
 
   
   

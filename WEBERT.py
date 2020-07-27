@@ -28,7 +28,7 @@ from scipy.stats import kurtosis, skew
 #%%
 # specify GPU device
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+#device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 if torch.cuda.is_available():
     
@@ -50,10 +50,11 @@ class BERT:
     :param stopwords: boolean variable for removing stopwords (By defalut: False).
     :param model: base or large model (By defalut: base).
     :param cased: boolean variable to compute cased or lower-case model (By defalut: False).
+    :param cased: boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).
     :returns: WEBERT object
     """    
     
-    def __init__(self,inputs, file, language='english', stopwords=False, model='base', cased=False):   
+    def __init__(self,inputs, file, language='english', stopwords=False, model='base', cased=False, cuda=False):   
         
 
 
@@ -78,7 +79,12 @@ class BERT:
         self.model='bert-'+model+'-'+cased_str
         if self.language=='spanish':
             self.model='bert-'+model+'-multilingual-'+cased
-        
+            
+        if cuda:
+            self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        else:
+            self.device='cpu'
+
         
         
     def preprocessing(self,inputs):
@@ -169,12 +175,12 @@ class BERT:
         data_stat=[]
 
         bert = BertModel.from_pretrained(self.model).embeddings
-        bert=bert.to(device)
+        bert=bert.to(self.device)
 
 
 
         for idx_batch, sequence in enumerate(self.data_dataloader,1):
-            sequence=sequence.to(device)
+            sequence=sequence.to(self.device)
 
             ids_tokens=np.where((self.indexed_tokens[idx_batch-1]!=101) &(self.indexed_tokens[idx_batch-1]!=102) & (self.indexed_tokens[idx_batch-1]!=112))[0]
             tokens=np.array(self.tokenized_texts[idx_batch-1])[ids_tokens]
@@ -261,10 +267,11 @@ class BETO:
     :param stopwords: boolean variable for removing stopwords (By defalut: False).
     :param model: base or large model (By defalut: base).
     :param cased: boolean variable to compute cased or lower-case model (By defalut: False).
+    :param cased: boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).
     :returns: WEBERT object
     """    
     
-    def __init__(self,inputs,file, stopwords=False, model='base', cased=False):   
+    def __init__(self,inputs,file, stopwords=False, model='base', cased=False, cuda=False):   
         
 
 
@@ -287,7 +294,10 @@ class BETO:
             cased_str='cased'
         
         self.model='dccuchile/bert-'+model+'-spanish-wwm'+'-'+cased_str
-
+        if cuda:
+            self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        else:
+            self.device='cpu'
         
         
         
@@ -379,12 +389,12 @@ class BETO:
         data_stat=[]
 
         bert = BertModel.from_pretrained(self.model).embeddings
-        bert=bert.to(device)
+        bert=bert.to(self.device)
 
 
 
         for idx_batch, sequence in enumerate(self.data_dataloader,1):
-            sequence=sequence.to(device)
+            sequence=sequence.to(self.device)
 
             ids_tokens=np.where((self.indexed_tokens[idx_batch-1]!=3) &(self.indexed_tokens[idx_batch-1]!=5) & (self.indexed_tokens[idx_batch-1]!=4))[0]
             tokens=np.array(self.tokenized_texts[idx_batch-1])[ids_tokens]
@@ -470,10 +480,11 @@ class SciBERT:
     :param file: name of the document.
     :param stopwords: boolean variable for removing stopwords (By defalut: False).
     :param cased: boolean variable to compute cased or lower-case model (By defalut: False).
+    :param cased: boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).
     :returns: WEBERT object
     """    
     
-    def __init__(self,inputs, file, stopwords=False, cased=False):   
+    def __init__(self,inputs, file, stopwords=False, cased=False, cuda=False):   
         
 
 
@@ -498,7 +509,10 @@ class SciBERT:
         
         self.model='allenai/scibert_scivocab_'+cased_str
 
-        
+        if cuda:
+            self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        else:
+            self.device='cpu'
         
         
     def preprocessing(self,inputs):
@@ -589,12 +603,12 @@ class SciBERT:
         data_stat=[]
 
         bert = AutoModel.from_pretrained(self.model).embeddings
-        bert=bert.to(device)
+        bert=bert.to(self.device)
 
 
 
         for idx_batch, sequence in enumerate(self.data_dataloader,1):
-            sequence=sequence.to(device)
+            sequence=sequence.to(self.device)
 
             ids_tokens=np.where((self.indexed_tokens[idx_batch-1]!=102) &(self.indexed_tokens[idx_batch-1]!=103) &(self.indexed_tokens[idx_batch-1]!=101) )[0]
             tokens=np.array(self.tokenized_texts[idx_batch-1])[ids_tokens]

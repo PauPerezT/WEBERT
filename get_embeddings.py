@@ -37,6 +37,8 @@ if __name__ == '__main__':
     parser.add_argument('-sw','--stopwords', default=False, help='Boolean value, set True if you want to remove stopwords, By default False.' , choices=(True, False))
     parser.add_argument('-m','--model', default='base', help='Bert models, two options base and large. By default base.', choices=('base', 'large'))
     parser.add_argument('-c','--cased', default=False, help='Boolean value for cased= True o lower-cased= False models. By defaul False.', choices=(True, False))
+    parser.add_argument('-cu','--cuda', default=False, help='Boolean value for using cuda to compute the embeddings (True). By defaul False.', choices=(True, False))
+
     #parser.print_help()
     args = parser.parse_args()
 
@@ -49,6 +51,7 @@ if __name__ == '__main__':
     cased=args.cased
     dynamic=args.dynamic
     static=args.static
+    cuda=args.cuda
 
     
     
@@ -99,13 +102,13 @@ if __name__ == '__main__':
         data_input=list(data[0])
         if bert_model=='Bert':
             bert=BERT(data_input,file_name, language=language, stopwords=stopwords, 
-                      model=model, cased=cased)
+                      model=model, cased=cased, cuda=cuda)
         elif bert_model=='Beto':
             bert=BETO(data_input,file_name, stopwords=stopwords, 
-                      model=model, cased=cased)
+                      model=model, cased=cased, cuda=cuda)
         elif bert_model=='SciBert':
             bert=SciBERT(data_input,file_name, stopwords=stopwords,
-                         cased=cased)
+                         cased=cased, cuda=cuda)
         
         j+=1
  

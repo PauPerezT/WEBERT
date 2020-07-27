@@ -218,52 +218,58 @@ BERT embeddings are computed using Transformers (<a class="reference external" h
 </td>
 </tr>
 <tr class="row-odd"><td>-bm</td>
-<td>Bert,Beto,SciBert</td>
+<td>Bert, Beto, SciBert</td>
 <td><p class="first">Choose between three different BERT models.</p>
 <p class="last">By default BERT</p>
 </td>
 </tr>
 <tr class="row-even"><td>-d</td>
-<td>True,False</td>
+<td>True, False</td>
 <td><p class="first">Boolean value to get dynamic features= True.</p>
 <p class="last">By default True.</p>
 </td>
 </tr>
 <tr class="row-odd"><td>-st</td>
-<td>True,False</td>
+<td>True, False</td>
 <td><p class="first">Boolean value to get static features= True from the</p>
 <p>embeddings such as mean, standard deviation, kurtosis,</p>
 <p class="last">skeweness, min and max. By default False.</p>
 </td>
 </tr>
 <tr class="row-even"><td>-l</td>
-<td>english,spanish</td>
+<td>english, spanish</td>
 <td>Chosen language (only available for BERT model).
 By default english.</td>
 </tr>
 <tr class="row-odd"><td>-sw</td>
-<td>True,False</td>
+<td>True, False</td>
 <td><p class="first">Boolean value, set True if you want to remove</p>
 <p class="last">stopwords. By default False.</p>
 </td>
 </tr>
 <tr class="row-even"><td>-m</td>
-<td>base,large</td>
+<td>base, large</td>
 <td><p class="first">Bert models, two options base and large.</p>
 <p class="last">By default base.</p>
 </td>
 </tr>
 <tr class="row-odd"><td>-c</td>
-<td>True,False</td>
+<td>True, False</td>
 <td><p class="first">Boolean value for cased= True o lower-cased= False</p>
 <p class="last">models. No avalaible for SciBert. By defaul False.</p>
+</td>
+</tr>
+<tr class="row-even"><td>-cu</td>
+<td>True, False</td>
+<td><p class="first">Boolean value for using cuda to compute the</p>
+<p class="last">embeddings (True). By defaul False.</p>
 </td>
 </tr>
 </tbody>
 </table>
 </div></blockquote>
 <p>Usage example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">get_embeddings</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="o">./</span><span class="n">texts</span><span class="o">/</span> <span class="o">-</span><span class="n">s</span> <span class="o">./</span><span class="n">bert_embs</span> <span class="o">-</span><span class="n">bm</span> <span class="n">Bert</span> <span class="o">-</span><span class="n">d</span> <span class="kc">True</span> <span class="o">-</span><span class="n">st</span> <span class="kc">True</span> <span class="o">-</span><span class="n">l</span> <span class="n">english</span> <span class="o">-</span><span class="n">sw</span> <span class="kc">True</span> <span class="o">-</span><span class="n">m</span> <span class="n">base</span> <span class="o">-</span><span class="n">c</span> <span class="kc">True</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">get_embeddings</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="o">./</span><span class="n">texts</span><span class="o">/</span> <span class="o">-</span><span class="n">s</span> <span class="o">./</span><span class="n">bert_embs</span> <span class="o">-</span><span class="n">bm</span> <span class="n">Bert</span> <span class="o">-</span><span class="n">d</span> <span class="kc">True</span> <span class="o">-</span><span class="n">st</span> <span class="kc">True</span> <span class="o">-</span><span class="n">l</span> <span class="n">english</span> <span class="o">-</span><span class="n">sw</span> <span class="kc">True</span> <span class="o">-</span><span class="n">m</span> <span class="n">base</span> <span class="o">-</span><span class="n">c</span> <span class="kc">True</span> <span class="o">-</span><span class="n">cu</span> <span class="kc">True</span>
 </pre></div>
 </div>
 </div>
@@ -271,7 +277,7 @@ By default english.</td>
 <span id="methods"></span><h3>Methods<a class="headerlink" href="#module-WEBERT" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="WEBERT.BERT">
-<em class="property">class </em><code class="descclassname">WEBERT.</code><code class="descname">BERT</code><span class="sig-paren">(</span><em>inputs</em>, <em>file</em>, <em>language='english'</em>, <em>stopwords=False</em>, <em>model='base'</em>, <em>cased=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BERT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BERT" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">WEBERT.</code><code class="descname">BERT</code><span class="sig-paren">(</span><em>inputs</em>, <em>file</em>, <em>language='english'</em>, <em>stopwords=False</em>, <em>model='base'</em>, <em>cased=False</em>, <em>cuda=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BERT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BERT" title="Permalink to this definition">¶</a></dt>
 <dd><p>WEBERT-BERT computes BERT to get static or dynamic embeddings. 
 BERT uses Transformers (<a class="reference external" href="https://github.com/huggingface/transformers">https://github.com/huggingface/transformers</a>). 
 It can be computed using english and spanish (multilingual) model.
@@ -287,6 +293,7 @@ Also considers cased or uncased options, and remotion of stopwords.</p>
 <li><strong>stopwords</strong> – boolean variable for removing stopwords (By defalut: False).</li>
 <li><strong>model</strong> – base or large model (By defalut: base).</li>
 <li><strong>cased</strong> – boolean variable to compute cased or lower-case model (By defalut: False).</li>
+<li><strong>cased</strong> – boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).</li>
 </ul>
 </td>
 </tr>
@@ -337,7 +344,7 @@ Also considers cased or uncased options, and remotion of stopwords.</p>
 
 <dl class="class">
 <dt id="WEBERT.BETO">
-<em class="property">class </em><code class="descclassname">WEBERT.</code><code class="descname">BETO</code><span class="sig-paren">(</span><em>inputs</em>, <em>file</em>, <em>stopwords=False</em>, <em>model='base'</em>, <em>cased=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BETO"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BETO" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">WEBERT.</code><code class="descname">BETO</code><span class="sig-paren">(</span><em>inputs</em>, <em>file</em>, <em>stopwords=False</em>, <em>model='base'</em>, <em>cased=False</em>, <em>cuda=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BETO"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BETO" title="Permalink to this definition">¶</a></dt>
 <dd><p>WEBERT-BETO computes BETO to get static or dynamic embeddings. 
 BETO is a pretrained BERT model from spanish corpus (<a class="reference external" href="https://github.com/dccuchile/beto">https://github.com/dccuchile/beto</a>).
 BETO uses Transformers (<a class="reference external" href="https://github.com/huggingface/transformers">https://github.com/huggingface/transformers</a>). 
@@ -353,6 +360,7 @@ Also considers cased or uncased options, and remotion of stopwords.</p>
 <li><strong>stopwords</strong> – boolean variable for removing stopwords (By defalut: False).</li>
 <li><strong>model</strong> – base or large model (By defalut: base).</li>
 <li><strong>cased</strong> – boolean variable to compute cased or lower-case model (By defalut: False).</li>
+<li><strong>cased</strong> – boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).</li>
 </ul>
 </td>
 </tr>
@@ -403,7 +411,7 @@ Also considers cased or uncased options, and remotion of stopwords.</p>
 
 <dl class="class">
 <dt id="WEBERT.SciBERT">
-<em class="property">class </em><code class="descclassname">WEBERT.</code><code class="descname">SciBERT</code><span class="sig-paren">(</span><em>inputs</em>, <em>file</em>, <em>stopwords=False</em>, <em>cased=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#SciBERT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.SciBERT" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">WEBERT.</code><code class="descname">SciBERT</code><span class="sig-paren">(</span><em>inputs</em>, <em>file</em>, <em>stopwords=False</em>, <em>cased=False</em>, <em>cuda=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#SciBERT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.SciBERT" title="Permalink to this definition">¶</a></dt>
 <dd><p>WEBERT-SCIBERT computes BERT to get static or dynamic embeddings. 
 SCIBERT is a pre-trained model on english scientific text (<a class="reference external" href="https://github.com/allenai/scibert">https://github.com/allenai/scibert</a>).
 BERT uses Transformers (<a class="reference external" href="https://github.com/huggingface/transformers">https://github.com/huggingface/transformers</a>). 
@@ -418,6 +426,7 @@ Also considers cased or uncased options, and remotion of stopwords.</p>
 <li><strong>file</strong> – name of the document.</li>
 <li><strong>stopwords</strong> – boolean variable for removing stopwords (By defalut: False).</li>
 <li><strong>cased</strong> – boolean variable to compute cased or lower-case model (By defalut: False).</li>
+<li><strong>cased</strong> – boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).</li>
 </ul>
 </td>
 </tr>
