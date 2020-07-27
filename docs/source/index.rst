@@ -20,6 +20,8 @@ From the source file::
 
     git clone https://github.com/PauPerezT/WEBERT
     cd WEBERT
+    
+To install the requeriments, please run::
     ./install.sh
 
 
