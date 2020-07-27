@@ -29,9 +29,9 @@ setup(
     download_url='https://github.com/PauPerezT/WEBERT//archive/0.0.1.tar.gz',
     license='apache',
     install_requires=install_requires,
-    packages=['webert'],
+    packages=['WEBERT'],
     package_data={'': ['texts/*']},
-    keywords = ['word embeddings', 'bert', 'transoformers'],
+    keywords = ['word embeddings', 'bert', 'transformers'],
     dependency_links=['git+git://github.com/huggingface/transformers'],
     classifiers=[
     'Development Status :: 4 - Beta',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package

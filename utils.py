@@ -12,9 +12,11 @@
 
     #%% Contains %%#
         *noPunctuation: to eliminate the Punctuation
-        PunctuationExtra: to eliminate the Punctuation related to spanish symbols
+        *PunctuationExtra: to eliminate the Punctuation related to spanish symbols
         *StopWordsRemoval: to eliminate stopwords
         *HesitationsRemoval: to remove hesitation labels (for example: [h mm])
+        *Createfolder: to create a folder
+        
 
 """
 
@@ -24,6 +26,7 @@ import spacy
 from nltk.corpus import stopwords
 import unicodedata
 import re
+import os
 #%% noPunctuation
 def noPunctuation(text):
     
@@ -135,4 +138,7 @@ def HesitationsRemoval(text):
     return text
 
 
-
+def create_fold(new_folder):
+    
+    if os.path.isdir(new_folder)==False:
+        os.makedirs(new_folder)

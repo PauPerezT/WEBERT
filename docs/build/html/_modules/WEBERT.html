@@ -1,36 +1,156 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>WEBERT &#8212; WEBERT  documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>WEBERT &mdash; WEBERT  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/logo.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> WEBERT
+          
+
+          
+            
+            <img src="../_static/logo_web.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html#contact">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help.html">Need Help!</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">WEBERT</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>WEBERT</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <h1>Source code for WEBERT</h1><div class="highlight"><pre>
 <span></span>
@@ -47,7 +167,7 @@
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
 <span class="kn">import</span> <span class="nn">torchvision</span> <span class="k">as</span> <span class="nn">tv</span>
 <span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">argparse</span>
+
 <span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="k">import</span> <span class="n">DataLoader</span>
 
 <span class="kn">from</span> <span class="nn">transformers</span> <span class="k">import</span> <span class="n">BertTokenizer</span><span class="p">,</span> <span class="n">BertModel</span>
@@ -56,14 +176,12 @@
 <span class="kn">from</span> <span class="nn">utils</span> <span class="k">import</span> <span class="n">noPunctuation</span><span class="p">,</span> <span class="n">StopWordsRemoval</span><span class="p">,</span><span class="n">noPunctuationExtra</span>
 <span class="kn">import</span> <span class="nn">copy</span>
 
-
-
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="k">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">AutoModel</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">kurtosis</span><span class="p">,</span> <span class="n">skew</span>
 
 
-<span class="k">def</span> <span class="nf">create_fold</span><span class="p">(</span><span class="n">new_folder</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">new_folder</span><span class="p">)</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">new_folder</span><span class="p">)</span>
+
+
 
 
 <span class="c1">#%%</span>
@@ -78,29 +196,30 @@
     <span class="n">n_gpu</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">device_count</span><span class="p">()</span>
 
 
-<span class="nb">print</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 <div class="viewcode-block" id="BERT"><a class="viewcode-back" href="../index.html#WEBERT.BERT">[docs]</a><span class="k">class</span> <span class="nc">BERT</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    WEBERT-BERT computes BERT to get static or dynamic embeddings. </span>
+<span class="sd">    BERT uses Transformers (https://github.com/huggingface/transformers). </span>
+<span class="sd">    It can be computed using english and spanish (multilingual) model.</span>
+<span class="sd">    Also considers cased or uncased options, and remotion of stopwords.</span>
+<span class="sd">    </span>
+<span class="sd">    :param inputs: input data</span>
+<span class="sd">    :param file: name of the document.</span>
+<span class="sd">    :param language: input language (english).</span>
+<span class="sd">    :param stopwords: boolean variable for the stopword remotion (False).</span>
+<span class="sd">    :param model: base or large model (base).</span>
+<span class="sd">    :param cased: boolean variable to compute cased or lower-case model (False).</span>
+<span class="sd">    :returns: WEBERT object</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
     
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span><span class="n">file_names</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span> <span class="n">stopwords</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="n">cased</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        It computes BERT to get static or dynamic embeddings. BERT uses Transformers (https://github.com/huggingface/transformers). It can be computed using english and spanish (multilingual) model. Also considers cased or uncased options, and remotion of stopwords.</span>
-<span class="sd">        </span>
-<span class="sd">        :param data: input data</span>
-<span class="sd">        :param file names: name of the document.</span>
-<span class="sd">        :param language: input language (english).</span>
-<span class="sd">        :param stopwords: boolean variable for the stopword remotion (False).</span>
-<span class="sd">        :param model: base or large model (base).</span>
-<span class="sd">        :param cased: boolean variable to compute cased or lower-case model (False).</span>
-<span class="sd">        :param words: words after pre-processing</span>
-<span class="sd">        :param word_counting: number of words after pre-processing.</span>
-<span class="sd">        :param neurons: output dimension according to the model (768).</span>
-<span class="sd">        </span>
-<span class="sd">        &quot;&quot;&quot;</span>    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span> <span class="n">stopwords</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="n">cased</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>   
         
+
+
         
         
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">=</span><span class="n">inputs</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">file_names</span><span class="o">=</span><span class="n">file_names</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_names</span><span class="o">=</span><span class="n">file</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="o">=</span><span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">word_counting</span><span class="o">=</span><span class="p">[]</span> 
 
@@ -121,17 +240,20 @@
         
         
         
-    <span class="k">def</span> <span class="nf">__preprocessing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="BERT.preprocessing"><a class="viewcode-back" href="../index.html#WEBERT.BERT.preprocessing">[docs]</a>    <span class="k">def</span> <span class="nf">preprocessing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">inputs</span><span class="p">):</span>
         
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Text Pre-processing</span>
-
+<span class="sd">        </span>
+<span class="sd">        :param inputs: input data</span>
+<span class="sd">        :returns: proprocessed text</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">inputs</span>
         
         <span class="n">docs</span><span class="o">=</span><span class="p">[]</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
             
-            <span class="n">text</span> <span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">text</span> <span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
             
     
             <span class="n">text_aux</span><span class="o">=</span><span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
@@ -148,7 +270,7 @@
                 <span class="n">text</span><span class="o">=</span><span class="n">StopWordsRemoval</span><span class="p">(</span><span class="n">text_aux</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">Language</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text_org</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
             <span class="n">docs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text_aux</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">=</span><span class="n">docs</span>
+        <span class="k">return</span> <span class="n">docs</span></div>
             
     
     <span class="k">def</span> <span class="nf">__data_preparation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -159,9 +281,9 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         
         <span class="c1"># add special tokens for BERT to work properly</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__preprocessing</span><span class="p">()</span>
+        <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">preprocessing</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
         
-        <span class="n">sentences</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;[CLS] &quot;</span> <span class="o">+</span> <span class="n">query</span> <span class="o">+</span> <span class="s2">&quot; [SEP]&quot;</span> <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
+        <span class="n">sentences</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;[CLS] &quot;</span> <span class="o">+</span> <span class="n">query</span> <span class="o">+</span> <span class="s2">&quot; [SEP]&quot;</span> <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
 
 
         
@@ -284,170 +406,474 @@
         
 
                 
+<span class="c1">#%%</span>
+<div class="viewcode-block" id="BETO"><a class="viewcode-back" href="../index.html#WEBERT.BETO">[docs]</a><span class="k">class</span> <span class="nc">BETO</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    WEBERT-BETO computes BETO to get static or dynamic embeddings. </span>
+<span class="sd">    BETO is a pretrained BERT model from spanish corpus (https://github.com/dccuchile/beto)</span>
+<span class="sd">    BETO uses Transformers (https://github.com/huggingface/transformers). </span>
+<span class="sd">    It can be computed using only spanish model.</span>
+<span class="sd">    Also considers cased or uncased options, and remotion of stopwords.</span>
+<span class="sd">    </span>
+<span class="sd">    :param inputs: input data</span>
+<span class="sd">    :param file: name of the document.</span>
+<span class="sd">    :param stopwords: boolean variable for the stopword remotion (False).</span>
+<span class="sd">    :param model: base or large model (base).</span>
+<span class="sd">    :param cased: boolean variable to compute cased or lower-case model (False).</span>
+<span class="sd">    :returns: WEBERT object</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span><span class="n">file</span><span class="p">,</span> <span class="n">stopwords</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="n">cased</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>   
+        
+
+
+        
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">=</span><span class="n">inputs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_names</span><span class="o">=</span><span class="n">file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="o">=</span><span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">word_counting</span><span class="o">=</span><span class="p">[]</span> 
+
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">stopwords</span><span class="o">=</span><span class="n">stopwords</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">neurons</span><span class="o">=</span><span class="mi">768</span>
+        <span class="k">if</span> <span class="n">model</span><span class="o">==</span><span class="s1">&#39;large&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">neurons</span><span class="o">=</span><span class="mi">1024</span>
+        <span class="n">cased_str</span><span class="o">=</span><span class="s1">&#39;cased&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cased</span><span class="o">=</span><span class="n">cased</span>
+        <span class="k">if</span> <span class="n">cased</span><span class="p">:</span>
+            <span class="n">cased_str</span><span class="o">=</span><span class="s1">&#39;cased&#39;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;dccuchile/bert-&#39;</span><span class="o">+</span><span class="n">model</span><span class="o">+</span><span class="s1">&#39;-spanish-wwm&#39;</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="o">+</span><span class="n">cased_str</span>
+
+        
+        
+        
+<div class="viewcode-block" id="BETO.preprocessing"><a class="viewcode-back" href="../index.html#WEBERT.BETO.preprocessing">[docs]</a>    <span class="k">def</span> <span class="nf">preprocessing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">inputs</span><span class="p">):</span>
+        
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Text Pre-processing</span>
+<span class="sd">        </span>
+<span class="sd">        :param inputs: input data</span>
+<span class="sd">        :returns: proprocessed text</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">inputs</span>
+        
+        <span class="n">docs</span><span class="o">=</span><span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+            
+            <span class="n">text</span> <span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            
+    
+            <span class="n">text_aux</span><span class="o">=</span><span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+            <span class="n">text_aux</span><span class="o">=</span><span class="n">noPunctuationExtra</span><span class="p">(</span><span class="n">text_aux</span><span class="p">)</span>
+            <span class="n">text_aux</span><span class="o">=</span><span class="n">text_aux</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s2">&quot; [SEP]&quot;</span> <span class="p">)</span>
+            <span class="k">if</span> <span class="n">text_aux</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span><span class="o">==</span><span class="s2">&quot;[SEP]&quot;</span><span class="p">:</span>
+                <span class="n">text_aux</span><span class="o">=</span><span class="n">text_aux</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+            <span class="n">text_org</span><span class="o">=</span><span class="n">noPunctuationExtra</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">))</span>
+
+            <span class="n">text_org</span><span class="o">=</span><span class="n">noPunctuation</span><span class="p">(</span><span class="n">text_org</span><span class="p">)</span>
+            
+            
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">stopwords</span><span class="p">:</span>
+                <span class="n">text</span><span class="o">=</span><span class="n">StopWordsRemoval</span><span class="p">(</span><span class="n">text_aux</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">Language</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text_org</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+            <span class="n">docs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text_aux</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">docs</span></div>
+            
+    
+    <span class="k">def</span> <span class="nf">__data_preparation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Data preparation and adaptation for BETO to work properly</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="c1"># add special tokens for BERT to work properly</span>
+        <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">preprocessing</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        
+        <span class="n">sentences</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;[CLS] &quot;</span> <span class="o">+</span> <span class="n">query</span> <span class="o">+</span> <span class="s2">&quot; [SEP]&quot;</span> <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+
+
+        
+        <span class="c1"># Tokenize with BERT tokenizer</span>
+        
+        <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">BertTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">do_lower_case</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cased</span><span class="p">)</span>
+       
+
+        <span class="n">tokenized_texts</span> <span class="o">=</span> <span class="p">[</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">sent</span><span class="p">)</span> <span class="k">for</span> <span class="n">sent</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">word_counting</span><span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">words</span> <span class="ow">in</span> <span class="n">tokenized_texts</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">tokenized_texts</span><span class="o">=</span><span class="n">tokenized_texts</span>
+        
+
+        <span class="c1"># Use the BERT tokenizer to convert the tokens to their index numbers in the BERT vocabulary</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">indexed_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">convert_tokens_to_ids</span><span class="p">(</span><span class="n">tk</span><span class="p">))</span> <span class="k">for</span> <span class="n">tk</span> <span class="ow">in</span> <span class="n">tokenized_texts</span><span class="p">]</span>
+
+        <span class="n">data_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">convert_tokens_to_ids</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tokenized_texts</span><span class="p">]</span>
+
+        
+        <span class="c1"># Create an iterator of our data with torch DataLoader </span>
+        
+ 
+        <span class="bp">self</span><span class="o">.</span><span class="n">data_dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">data_ids</span><span class="p">,</span>  <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        
+                      
+        
+<div class="viewcode-block" id="BETO.get_bert_embeddings"><a class="viewcode-back" href="../index.html#WEBERT.BETO.get_bert_embeddings">[docs]</a>    <span class="k">def</span> <span class="nf">get_bert_embeddings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">static</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        BETO embeddings computation using Transformes. It store and transforms the texts into BETO embeddings. The embedings are stored in csv files.</span>
+<span class="sd">        </span>
+<span class="sd">        :param path: path to save the embeddings</span>
+<span class="sd">        :param dynamic: boolean variable to compute the dynamic embeddings (True).</span>
+<span class="sd">        :param static: boolean variable to compute the static embeddings (False).</span>
+<span class="sd">        :returns: static embeddings if static=True</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>  
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">__data_preparation</span><span class="p">()</span>
+        
+        <span class="n">data_stat</span><span class="o">=</span><span class="p">[]</span>
+
+        <span class="n">bert</span> <span class="o">=</span> <span class="n">BertModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span><span class="o">.</span><span class="n">embeddings</span>
+        <span class="n">bert</span><span class="o">=</span><span class="n">bert</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+
+
+        <span class="k">for</span> <span class="n">idx_batch</span><span class="p">,</span> <span class="n">sequence</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_dataloader</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">sequence</span><span class="o">=</span><span class="n">sequence</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+            <span class="n">ids_tokens</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">indexed_tokens</span><span class="p">[</span><span class="n">idx_batch</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">!=</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indexed_tokens</span><span class="p">[</span><span class="n">idx_batch</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">!=</span><span class="mi">5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indexed_tokens</span><span class="p">[</span><span class="n">idx_batch</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">!=</span><span class="mi">4</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">tokens</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tokenized_texts</span><span class="p">[</span><span class="n">idx_batch</span><span class="o">-</span><span class="mi">1</span><span class="p">])[</span><span class="n">ids_tokens</span><span class="p">]</span>
+            <span class="n">index</span><span class="o">=</span><span class="p">[]</span>
+            <span class="n">index_num</span><span class="o">=</span><span class="p">[]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tokens</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="p">[</span><span class="n">idx</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="s1">&#39;#&#39;</span><span class="p">]</span> <span class="o">==</span><span class="p">[]:</span>
+                    <span class="n">index</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">index_num</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
                 
             
 
+            <span class="n">bert_embeddings</span><span class="o">=</span><span class="n">bert</span><span class="p">(</span><span class="n">sequence</span><span class="p">)[</span><span class="mi">0</span><span class="p">][:,</span><span class="n">ids_tokens</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
 
+            <span class="n">embeddings</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">bert_embeddings</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">index_num</span><span class="p">),</span><span class="n">bert_embeddings</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">])))</span>
+            <span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+            <span class="k">if</span> <span class="n">index_num</span><span class="o">!=</span><span class="p">[]:</span>
+                <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ids_tokens</span><span class="p">)):</span>
+                     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">index_num</span><span class="o">==</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">idx</span><span class="p">]))[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+                         <span class="n">nums</span><span class="o">=</span><span class="n">bert_embeddings</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span><span class="o">*</span><span class="n">bert_embeddings</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">idx</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                         <span class="n">embeddings</span><span class="p">[</span><span class="n">idx</span><span class="o">-</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">nums</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+                         <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+                     <span class="k">else</span><span class="p">:</span>
+                         <span class="n">embeddings</span><span class="p">[</span><span class="n">idx</span><span class="o">-</span><span class="n">count</span><span class="p">]</span><span class="o">=</span><span class="n">bert_embeddings</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                
+                <span class="n">embeddings</span><span class="o">=</span><span class="n">bert_embeddings</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             
+            <span class="k">if</span> <span class="n">static</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">emb</span> <span class="ow">in</span> <span class="n">embeddings</span><span class="p">:</span>
+                    <span class="n">data_stat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">emb</span><span class="p">)</span>
+                    
+   
+ 
+
+            <span class="k">if</span> <span class="n">dynamic</span><span class="p">:</span> 
+                <span class="n">i</span><span class="o">=</span><span class="mi">1</span>
+                <span class="n">data_csv</span><span class="o">=</span><span class="p">[]</span>
+                <span class="n">labelstf</span><span class="o">=</span> <span class="p">[]</span>
+                <span class="n">labelstf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Word&#39;</span><span class="p">)</span>   
+                <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">neurons</span><span class="p">):</span>
+                    <span class="n">labelstf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Neuron&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>  
+                <span class="k">for</span> <span class="n">emb</span> <span class="ow">in</span> <span class="n">embeddings</span><span class="p">:</span>
+                    <span class="n">data_csv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="n">idx_batch</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">emb</span><span class="p">)))</span>
+                    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">file_names</span><span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+                    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span>
+                    
+                
+                    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">labelstf</span><span class="p">)</span>
+                    <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">data_csv</span><span class="p">)</span>
+                
+        <span class="k">if</span> <span class="n">static</span><span class="p">:</span>        
+            <span class="n">wordar</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">data_stat</span><span class="p">)</span>
+            <span class="k">del</span> <span class="n">data_stat</span>
+            <span class="n">meanBERT</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">wordar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">stdBERT</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">wordar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">kurtosisBERT</span><span class="o">=</span><span class="n">kurtosis</span><span class="p">(</span><span class="n">wordar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">skewnessBERT</span><span class="o">=</span><span class="n">skew</span><span class="p">(</span><span class="n">wordar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">skewnessBERT</span><span class="o">=</span><span class="n">skew</span><span class="p">(</span><span class="n">wordar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">minBERT</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">wordar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">maxBERT</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">wordar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">statisticalMeasures</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">meanBERT</span><span class="p">,</span> <span class="n">stdBERT</span><span class="p">,</span> <span class="n">kurtosisBERT</span><span class="p">,</span> <span class="n">skewnessBERT</span><span class="p">,</span><span class="n">minBERT</span><span class="p">,</span> <span class="n">maxBERT</span><span class="p">))</span>
+            
+            
+                   
+            <span class="k">return</span> <span class="n">statisticalMeasures</span></div></div>
+                        
+            
+
 
 <span class="c1">#%%</span>
+<div class="viewcode-block" id="SciBERT"><a class="viewcode-back" href="../index.html#WEBERT.SciBERT">[docs]</a><span class="k">class</span> <span class="nc">SciBERT</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    WEBERT-SCIBERT computes BERT to get static or dynamic embeddings. </span>
+<span class="sd">    SCIBERT is a pre-trained model on english scientific text (https://github.com/allenai/scibert).</span>
+<span class="sd">    BERT uses Transformers (https://github.com/huggingface/transformers). </span>
+<span class="sd">    This toolkit only considered the scivocab model.</span>
+<span class="sd">    Also considers cased or uncased options, and remotion of stopwords.</span>
+<span class="sd">    </span>
+<span class="sd">    :param inputs: input data</span>
+<span class="sd">    :param file: name of the document.</span>
+<span class="sd">    :param stopwords: boolean variable for the stopword remotion (False).</span>
+<span class="sd">    :param cased: boolean variable to compute cased or lower-case model (False).</span>
+<span class="sd">    :returns: WEBERT object</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">stopwords</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cased</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>   
+        
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    
-    
-    
-    
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">add_help</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-f&#39;</span><span class="p">,</span><span class="s1">&#39;--files_path&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;./texts/&#39;</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s1">&#39;File folder of the set of documents&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-s&#39;</span><span class="p">,</span><span class="s1">&#39;--save_path&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;./bert_embeddings/&#39;</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s1">&#39;Path to save the embeddings&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store&quot;</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span><span class="s1">&#39;--dynamic&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Boolean value to get dynamic features= True. By defaul True.&#39;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-st&#39;</span><span class="p">,</span><span class="s1">&#39;--static&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Boolean value to get static features= True from the embeddings such as mean, standard deviation, kurtosis, skeweness, min and max. By default False.&#39;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-l&#39;</span><span class="p">,</span><span class="s1">&#39;--language&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s1">&#39;Chosen language. Here is available only english or spanish. By default english.&#39;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">,</span> <span class="s1">&#39;spanish&#39;</span><span class="p">))</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-sw&#39;</span><span class="p">,</span><span class="s1">&#39;--stopwords&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Boolean value, set True if you want to remove stopwords, By default False.&#39;</span> <span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-m&#39;</span><span class="p">,</span><span class="s1">&#39;--model&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Bert models, two options base and large. By default base.&#39;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="s1">&#39;large&#39;</span><span class="p">))</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-c&#39;</span><span class="p">,</span><span class="s1">&#39;--cased&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Boolean value for cased= True o lower-cased= False models. By defaul False.&#39;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
-    <span class="c1">#parser.print_help()</span>
-    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+        
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">=</span><span class="n">inputs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_names</span><span class="o">=</span><span class="n">file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="o">=</span><span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">word_counting</span><span class="o">=</span><span class="p">[]</span> 
 
-    <span class="n">files_path</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">files_path</span>
-    <span class="n">save_path</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">save_path</span> 
-    <span class="n">language</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">language</span><span class="p">)</span>
-    <span class="n">stopwords</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">stopwords</span>
-    <span class="n">model</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
-    <span class="n">cased</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">cased</span>
-    <span class="n">dynamic</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">dynamic</span>
-    <span class="n">static</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">static</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">stopwords</span><span class="o">=</span><span class="n">stopwords</span>
+        
 
-    
-    
-    <span class="n">files</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span><span class="nb">sorted</span><span class="p">([</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">files_path</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.txt&#39;</span><span class="p">)]))</span>
-    <span class="n">file_names</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span> <span class="p">])</span>
-    <span class="n">folder_path_static</span><span class="o">=</span><span class="n">save_path</span><span class="o">+</span><span class="s1">&#39;/Static/&#39;</span>
-    <span class="n">folder_path</span><span class="o">=</span><span class="n">save_path</span><span class="o">+</span><span class="s1">&#39;/Dynamic/&#39;</span>
-    <span class="n">create_fold</span><span class="p">(</span><span class="n">folder_path</span><span class="p">)</span>
-    <span class="n">create_fold</span><span class="p">(</span><span class="n">folder_path_static</span><span class="p">)</span>
-    <span class="n">j</span><span class="o">=</span><span class="mi">0</span>
-    
-    
-    <span class="n">neurons</span><span class="o">=</span><span class="mi">768</span>
-    <span class="k">if</span> <span class="n">model</span><span class="o">==</span><span class="s1">&#39;large&#39;</span><span class="p">:</span>
-        <span class="n">neurons</span><span class="o">=</span><span class="mi">1024</span>
-    
-    <span class="k">if</span> <span class="n">static</span><span class="p">:</span>
-        <span class="n">labelstf</span><span class="o">=</span><span class="p">[]</span>
-        <span class="n">labelstf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;File&#39;</span><span class="p">)</span>   
-        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">neurons</span><span class="p">):</span>
-            <span class="n">labelstf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Avg Neuron&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> 
-        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">neurons</span><span class="p">):</span>
-            <span class="n">labelstf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;STD Neuron&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> 
-        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">neurons</span><span class="p">):</span>
-            <span class="n">labelstf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Skew Neuron&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> 
-        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">neurons</span><span class="p">):</span>
-            <span class="n">labelstf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Kurt Neuron&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> 
-        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">neurons</span><span class="p">):</span>
-            <span class="n">labelstf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Min Neuron&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">neurons</span><span class="o">=</span><span class="mi">768</span>
+
             
-        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">neurons</span><span class="p">):</span>
-            <span class="n">labelstf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Max Neuron&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> 
-    
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">folder_path_static</span><span class="o">+</span><span class="s1">&#39;Bert_Static_Features.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
-            <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span>
+        <span class="n">cased_str</span><span class="o">=</span><span class="s1">&#39;uncased&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cased</span><span class="o">=</span><span class="n">cased</span>
+        <span class="k">if</span> <span class="n">cased</span><span class="p">:</span>
+            <span class="n">cased_str</span><span class="o">=</span><span class="s1">&#39;cased&#39;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;allenai/scibert_scivocab_&#39;</span><span class="o">+</span><span class="n">cased_str</span>
+
+        
+        
+        
+<div class="viewcode-block" id="SciBERT.preprocessing"><a class="viewcode-back" href="../index.html#WEBERT.SciBERT.preprocessing">[docs]</a>    <span class="k">def</span> <span class="nf">preprocessing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">inputs</span><span class="p">):</span>
+        
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Text Pre-processing</span>
+<span class="sd">        </span>
+<span class="sd">        :param inputs: input data</span>
+<span class="sd">        :returns: proprocessed text</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">inputs</span>
+        
+        <span class="n">docs</span><span class="o">=</span><span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
             
-        
-            <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">labelstf</span><span class="p">)</span>
-
-    <span class="n">pbar</span><span class="o">=</span><span class="n">tqdm</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
-        
+            <span class="n">text</span> <span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            
     
-    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">pbar</span><span class="p">:</span>
-        <span class="n">pbar</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="s2">&quot;Processing </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">file</span><span class="p">)</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">files_path</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="n">file</span><span class="p">)</span>
+            <span class="n">text_aux</span><span class="o">=</span><span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+            <span class="n">text_aux</span><span class="o">=</span><span class="n">noPunctuationExtra</span><span class="p">(</span><span class="n">text_aux</span><span class="p">)</span>
+            <span class="n">text_aux</span><span class="o">=</span><span class="n">text_aux</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s2">&quot; [SEP]&quot;</span> <span class="p">)</span>
+            <span class="k">if</span> <span class="n">text_aux</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span><span class="o">==</span><span class="s2">&quot;[SEP]&quot;</span><span class="p">:</span>
+                <span class="n">text_aux</span><span class="o">=</span><span class="n">text_aux</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span>
+            <span class="n">text_org</span><span class="o">=</span><span class="n">noPunctuationExtra</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">))</span>
 
-        <span class="n">file_name</span><span class="o">=</span><span class="n">file_names</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-        <span class="n">data_input</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="n">text_org</span><span class="o">=</span><span class="n">noPunctuation</span><span class="p">(</span><span class="n">text_org</span><span class="p">)</span>
+            
+            
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">stopwords</span><span class="p">:</span>
+                <span class="n">text</span><span class="o">=</span><span class="n">StopWordsRemoval</span><span class="p">(</span><span class="n">text_aux</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">Language</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text_org</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+            <span class="n">docs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text_aux</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">docs</span></div>
+            
+    
+    <span class="k">def</span> <span class="nf">__data_preparation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         
-        <span class="n">bert</span><span class="o">=</span><span class="n">BERT</span><span class="p">(</span><span class="n">data_input</span><span class="p">,</span><span class="n">file_name</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="n">language</span><span class="p">,</span> <span class="n">stopwords</span><span class="o">=</span><span class="n">stopwords</span><span class="p">,</span> 
-                  <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">cased</span><span class="o">=</span><span class="n">cased</span><span class="p">)</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Data preparation and adaptation for SciBERT to work properly</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
         
-        <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="c1"># add special tokens for BERT to work properly</span>
+        <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">preprocessing</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        
+        <span class="n">sentences</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;[CLS] &quot;</span> <span class="o">+</span> <span class="n">query</span> <span class="o">+</span> <span class="s2">&quot; [SEP]&quot;</span> <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+
+
+        
+        <span class="c1"># Tokenize with BERT tokenizer</span>
+        
+        <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">do_lower_case</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cased</span><span class="p">)</span>
+       
+
+        <span class="n">tokenized_texts</span> <span class="o">=</span> <span class="p">[</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">sent</span><span class="p">)</span> <span class="k">for</span> <span class="n">sent</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">word_counting</span><span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">words</span> <span class="ow">in</span> <span class="n">tokenized_texts</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">tokenized_texts</span><span class="o">=</span><span class="n">tokenized_texts</span>
+        
+
+        <span class="c1"># Use the BERT tokenizer to convert the tokens to their index numbers in the BERT vocabulary</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">indexed_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">convert_tokens_to_ids</span><span class="p">(</span><span class="n">tk</span><span class="p">))</span> <span class="k">for</span> <span class="n">tk</span> <span class="ow">in</span> <span class="n">tokenized_texts</span><span class="p">]</span>
+
+        <span class="n">data_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">convert_tokens_to_ids</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tokenized_texts</span><span class="p">]</span>
+
+        
+        <span class="c1"># Create an iterator of our data with torch DataLoader </span>
+        
  
-        <span class="k">if</span> <span class="n">static</span><span class="p">:</span>
-            <span class="n">data_stat</span><span class="o">=</span><span class="n">bert</span><span class="o">.</span><span class="n">get_bert_embeddings</span><span class="p">(</span><span class="n">folder_path</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="n">dynamic</span><span class="p">,</span> <span class="n">static</span><span class="o">=</span><span class="n">static</span><span class="p">)</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">folder_path_static</span><span class="o">+</span><span class="s1">&#39;Bert_Static_Features.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-                <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">file_name</span><span class="p">,</span> <span class="n">data_stat</span><span class="p">)))</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">bert</span><span class="o">.</span><span class="n">get_bert_embeddings</span><span class="p">(</span><span class="n">folder_path</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="n">dynamic</span><span class="p">,</span> <span class="n">static</span><span class="o">=</span><span class="n">static</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data_dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">data_ids</span><span class="p">,</span>  <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        
+                      
+        
+<div class="viewcode-block" id="SciBERT.get_bert_embeddings"><a class="viewcode-back" href="../index.html#WEBERT.SciBERT.get_bert_embeddings">[docs]</a>    <span class="k">def</span> <span class="nf">get_bert_embeddings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">static</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        SciBert embeddings computation using Transformes. It store and transforms the texts into SciBERT embeddings. The embedings are stored in csv files.</span>
+<span class="sd">        </span>
+<span class="sd">        :param path: path to save the embeddings</span>
+<span class="sd">        :param dynamic: boolean variable to compute the dynamic embeddings (True).</span>
+<span class="sd">        :param static: boolean variable to compute the static embeddings (False).</span>
+<span class="sd">        :returns: static embeddings if static=True</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>  
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">__data_preparation</span><span class="p">()</span>
+        
+        <span class="n">data_stat</span><span class="o">=</span><span class="p">[]</span>
+
+        <span class="n">bert</span> <span class="o">=</span> <span class="n">AutoModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span><span class="o">.</span><span class="n">embeddings</span>
+        <span class="n">bert</span><span class="o">=</span><span class="n">bert</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+
+
+        <span class="k">for</span> <span class="n">idx_batch</span><span class="p">,</span> <span class="n">sequence</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_dataloader</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">sequence</span><span class="o">=</span><span class="n">sequence</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+            <span class="n">ids_tokens</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">indexed_tokens</span><span class="p">[</span><span class="n">idx_batch</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">!=</span><span class="mi">102</span><span class="p">)</span> <span class="o">&amp;</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indexed_tokens</span><span class="p">[</span><span class="n">idx_batch</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">!=</span><span class="mi">103</span><span class="p">)</span> <span class="o">&amp;</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indexed_tokens</span><span class="p">[</span><span class="n">idx_batch</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">!=</span><span class="mi">101</span><span class="p">)</span> <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">tokens</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tokenized_texts</span><span class="p">[</span><span class="n">idx_batch</span><span class="o">-</span><span class="mi">1</span><span class="p">])[</span><span class="n">ids_tokens</span><span class="p">]</span>
+            <span class="n">index</span><span class="o">=</span><span class="p">[]</span>
+            <span class="n">index_num</span><span class="o">=</span><span class="p">[]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tokens</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="p">[</span><span class="n">idx</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="s1">&#39;#&#39;</span><span class="p">]</span> <span class="o">==</span><span class="p">[]:</span>
+                    <span class="n">index</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">index_num</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                
+            
+
+            <span class="n">bert_embeddings</span><span class="o">=</span><span class="n">bert</span><span class="p">(</span><span class="n">sequence</span><span class="p">)[</span><span class="mi">0</span><span class="p">][:,</span><span class="n">ids_tokens</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+
+            <span class="n">embeddings</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">bert_embeddings</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">index_num</span><span class="p">),</span><span class="n">bert_embeddings</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">])))</span>
+            <span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+            <span class="k">if</span> <span class="n">index_num</span><span class="o">!=</span><span class="p">[]:</span>
+                <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ids_tokens</span><span class="p">)):</span>
+                     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">index_num</span><span class="o">==</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">idx</span><span class="p">]))[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+                         <span class="n">nums</span><span class="o">=</span><span class="n">bert_embeddings</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span><span class="o">*</span><span class="n">bert_embeddings</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">idx</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                         <span class="n">embeddings</span><span class="p">[</span><span class="n">idx</span><span class="o">-</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">nums</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+                         <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+                     <span class="k">else</span><span class="p">:</span>
+                         <span class="n">embeddings</span><span class="p">[</span><span class="n">idx</span><span class="o">-</span><span class="n">count</span><span class="p">]</span><span class="o">=</span><span class="n">bert_embeddings</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                
+                <span class="n">embeddings</span><span class="o">=</span><span class="n">bert_embeddings</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            
+            <span class="k">if</span> <span class="n">static</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">emb</span> <span class="ow">in</span> <span class="n">embeddings</span><span class="p">:</span>
+                    <span class="n">data_stat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">emb</span><span class="p">)</span>
+                    
+   
+ 
+
+            <span class="k">if</span> <span class="n">dynamic</span><span class="p">:</span> 
+                <span class="n">i</span><span class="o">=</span><span class="mi">1</span>
+                <span class="n">data_csv</span><span class="o">=</span><span class="p">[]</span>
+                <span class="n">labelstf</span><span class="o">=</span> <span class="p">[]</span>
+                <span class="n">labelstf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Word&#39;</span><span class="p">)</span>   
+                <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">neurons</span><span class="p">):</span>
+                    <span class="n">labelstf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Neuron&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>  
+                <span class="k">for</span> <span class="n">emb</span> <span class="ow">in</span> <span class="n">embeddings</span><span class="p">:</span>
+                    <span class="n">data_csv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="n">idx_batch</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">emb</span><span class="p">)))</span>
+                    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">file_names</span><span class="o">+</span><span class="s1">&#39;.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+                    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span>
+                    
+                
+                    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">labelstf</span><span class="p">)</span>
+                    <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">data_csv</span><span class="p">)</span>
+                
+        <span class="k">if</span> <span class="n">static</span><span class="p">:</span>        
+            <span class="n">wordar</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">data_stat</span><span class="p">)</span>
+            <span class="k">del</span> <span class="n">data_stat</span>
+            <span class="n">meanBERT</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">wordar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">stdBERT</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">wordar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">kurtosisBERT</span><span class="o">=</span><span class="n">kurtosis</span><span class="p">(</span><span class="n">wordar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">skewnessBERT</span><span class="o">=</span><span class="n">skew</span><span class="p">(</span><span class="n">wordar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">skewnessBERT</span><span class="o">=</span><span class="n">skew</span><span class="p">(</span><span class="n">wordar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">minBERT</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">wordar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">maxBERT</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">wordar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">statisticalMeasures</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">meanBERT</span><span class="p">,</span> <span class="n">stdBERT</span><span class="p">,</span> <span class="n">kurtosisBERT</span><span class="p">,</span> <span class="n">skewnessBERT</span><span class="p">,</span><span class="n">minBERT</span><span class="p">,</span> <span class="n">maxBERT</span><span class="p">))</span>
+            
+            
+                   
+            <span class="k">return</span> <span class="n">statisticalMeasures</span></div></div>
+        
+        
+            
+
+
         
 </pre></div>
 
+           </div>
+           
           </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">WEBERT</a></h1>
+          <footer>
+  
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, P.A. Perez-Toro
 
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
-
-<h3>Navigation</h3>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../license.html#contact">Contact</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../help.html">Need Help!</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-  <li><a href="index.html">Module code</a><ul>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
+</footer>
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2020, P.A. Perez-Toro.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>

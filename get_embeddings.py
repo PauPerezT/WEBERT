@@ -31,7 +31,7 @@ if __name__ == '__main__':
     parser.add_argument('-f','--files_path', default='./texts/',help='File folder of the set of documents', action="store")
     parser.add_argument('-s','--save_path', default='./bert_embeddings/',help='Path to save the embeddings', action="store")
     parser.add_argument('-bm','--bert_model', default='Bert',help='Choose between three different BERT models: Bert, Beto and SciBert. By default BERT', choices=('Bert','Beto', 'SciBert'))
-    parser.add_argument('-d','--dynamic', default=True, help='Boolean value to get dynamic features= True. By defaul True.', choices=(True, False))
+    parser.add_argument('-d','--dynamic', default=True, help='Boolean value to get dynamic features= True. By default True.', choices=(True, False))
     parser.add_argument('-st','--static', default=False, help='Boolean value to get static features= True from the embeddings such as mean, standard deviation, kurtosis, skeweness, min and max. By default False.', choices=(True, False))
     parser.add_argument('-l','--language', default='english',help='Chosen language (only available for BERT model). Here is available only english or spanish. By default english.', choices=('english', 'spanish'))
     parser.add_argument('-sw','--stopwords', default=False, help='Boolean value, set True if you want to remove stopwords, By default False.' , choices=(True, False))

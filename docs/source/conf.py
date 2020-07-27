@@ -14,7 +14,9 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('/home/paulaperezt/Documents/GITA/Master/FeatureExtraction/NLP/BERT/WEBERT/'))
+
+sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('../../'))
 
 from unittest.mock import MagicMock  
 class Mock(MagicMock):    
@@ -35,8 +37,7 @@ version = ''
 # The full version, including alpha/beta/rc tags
 release = ''
 
-#LOGO
-html_logo = '../../logos/logo_web.png' html_favicon = '../../logos/logo.ico'
+
 
 # -- General configuration ---------------------------------------------------
 
@@ -78,16 +79,17 @@ language = None
 exclude_patterns = []
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = None
-
-
+pygments_style = 'sphinx'
+todo_include_todos = False
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
-
+html_theme = 'sphinx_rtd_theme'
+#LOGO
+html_logo = '../../logos/logo_web.png'
+html_favicon = '../../logos/logo.ico'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
@@ -162,7 +164,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'WEBERT', 'WEBERT Documentation',
-     author, 'WEBERT', 'One line description of project.',
+     author, 'WEBERT', 'Computes BERT embeddings for cased and large models in spanish and english automatically.',
      'Miscellaneous'),
 ]
 
