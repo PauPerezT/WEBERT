@@ -158,7 +158,7 @@
   <div class="section" id="welcome-to-webert-s-documentation">
 <h1>Welcome to WEBERT’s documentation!<a class="headerlink" href="#welcome-to-webert-s-documentation" title="Permalink to this headline">¶</a></h1>
 <p>This toolkit computes word embeddings using Bidirectional Encoder Representations from Transformers (BERT) for cased and large models in spanish and english automatically.
-BERT embeddings are computed using Transformers (<a class="reference external" href="https://github.com/huggingface/transformers">https://github.com/huggingface/transformers</a>). The project is ongoing.</p>
+BERT embeddings are computed using Transformers (<a class="reference external" href="https://github.com/huggingface/transformers">https://github.com/huggingface/transformers</a>). The project is currently ongoing.</p>
 <p>The code for this project is available at <a class="reference external" href="https://github.com/PauPerezT/WEBERT">https://github.com/PauPerezT/WEBERT</a></p>
 <div class="section" id="guide">
 <h2>Guide<a class="headerlink" href="#guide" title="Permalink to this headline">¶</a></h2>
@@ -184,7 +184,6 @@ BERT embeddings are computed using Transformers (<a class="reference external" h
 </div>
 <div class="section" id="executing-commands">
 <h2>Executing commands<a class="headerlink" href="#executing-commands" title="Permalink to this headline">¶</a></h2>
-<p>This are</p>
 <div class="section" id="run-it-automatically-from-linux-terminal">
 <h3>Run it automatically from linux terminal<a class="headerlink" href="#run-it-automatically-from-linux-terminal" title="Permalink to this headline">¶</a></h3>
 <p>To compute Bert embeddings automatically</p>
@@ -208,14 +207,14 @@ BERT embeddings are computed using Transformers (<a class="reference external" h
 </tr>
 <tr class="row-odd"><td>-f</td>
 <td>&#160;</td>
-<td><p class="first">File folder of the set of txt documents.</p>
-<p class="last">By defaul ‘./texts’</p>
+<td><p class="first">Path folder of the txt documents (Only txt format).</p>
+<p class="last">By default ‘./texts’</p>
 </td>
 </tr>
 <tr class="row-even"><td>-s</td>
 <td>&#160;</td>
 <td><p class="first">Path to save the embeddings.</p>
-<p class="last">By defaul ‘./bert_embeddings’</p>
+<p class="last">By default ‘./bert_embeddings’</p>
 </td>
 </tr>
 <tr class="row-odd"><td>-bm</td>
@@ -284,10 +283,10 @@ Also considers cased or uncased options, and remotion of stopwords.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>inputs</strong> – input data</li>
 <li><strong>file</strong> – name of the document.</li>
-<li><strong>language</strong> – input language (english).</li>
-<li><strong>stopwords</strong> – boolean variable for the stopword remotion (False).</li>
-<li><strong>model</strong> – base or large model (base).</li>
-<li><strong>cased</strong> – boolean variable to compute cased or lower-case model (False).</li>
+<li><strong>language</strong> – input language (By defalut: english).</li>
+<li><strong>stopwords</strong> – boolean variable for removing stopwords (By defalut: False).</li>
+<li><strong>model</strong> – base or large model (By defalut: base).</li>
+<li><strong>cased</strong> – boolean variable to compute cased or lower-case model (By defalut: False).</li>
 </ul>
 </td>
 </tr>
@@ -299,15 +298,15 @@ Also considers cased or uncased options, and remotion of stopwords.</p>
 <dl class="method">
 <dt id="WEBERT.BERT.get_bert_embeddings">
 <code class="descname">get_bert_embeddings</code><span class="sig-paren">(</span><em>path</em>, <em>dynamic=True</em>, <em>static=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BERT.get_bert_embeddings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BERT.get_bert_embeddings" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bert embeddings computation using Transformes. It store and transforms the texts into BERT embeddings. The embedings are stored in csv files.</p>
+<dd><p>Bert embeddings computation using Transformes. It store and transforms the texts into BERT embeddings. The embeddings are stored in csv files.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>path</strong> – path to save the embeddings</li>
-<li><strong>dynamic</strong> – boolean variable to compute the dynamic embeddings (True).</li>
-<li><strong>static</strong> – boolean variable to compute the static embeddings (False).</li>
+<li><strong>dynamic</strong> – boolean variable to compute the dynamic embeddings (By defalut: True).</li>
+<li><strong>static</strong> – boolean variable to compute the static embeddings (By defalut: False).</li>
 </ul>
 </td>
 </tr>
@@ -340,7 +339,7 @@ Also considers cased or uncased options, and remotion of stopwords.</p>
 <dt id="WEBERT.BETO">
 <em class="property">class </em><code class="descclassname">WEBERT.</code><code class="descname">BETO</code><span class="sig-paren">(</span><em>inputs</em>, <em>file</em>, <em>stopwords=False</em>, <em>model='base'</em>, <em>cased=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BETO"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BETO" title="Permalink to this definition">¶</a></dt>
 <dd><p>WEBERT-BETO computes BETO to get static or dynamic embeddings. 
-BETO is a pretrained BERT model from spanish corpus (<a class="reference external" href="https://github.com/dccuchile/beto">https://github.com/dccuchile/beto</a>)
+BETO is a pretrained BERT model from spanish corpus (<a class="reference external" href="https://github.com/dccuchile/beto">https://github.com/dccuchile/beto</a>).
 BETO uses Transformers (<a class="reference external" href="https://github.com/huggingface/transformers">https://github.com/huggingface/transformers</a>). 
 It can be computed using only spanish model.
 Also considers cased or uncased options, and remotion of stopwords.</p>
@@ -351,9 +350,9 @@ Also considers cased or uncased options, and remotion of stopwords.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>inputs</strong> – input data</li>
 <li><strong>file</strong> – name of the document.</li>
-<li><strong>stopwords</strong> – boolean variable for the stopword remotion (False).</li>
-<li><strong>model</strong> – base or large model (base).</li>
-<li><strong>cased</strong> – boolean variable to compute cased or lower-case model (False).</li>
+<li><strong>stopwords</strong> – boolean variable for removing stopwords (By defalut: False).</li>
+<li><strong>model</strong> – base or large model (By defalut: base).</li>
+<li><strong>cased</strong> – boolean variable to compute cased or lower-case model (By defalut: False).</li>
 </ul>
 </td>
 </tr>
@@ -365,15 +364,15 @@ Also considers cased or uncased options, and remotion of stopwords.</p>
 <dl class="method">
 <dt id="WEBERT.BETO.get_bert_embeddings">
 <code class="descname">get_bert_embeddings</code><span class="sig-paren">(</span><em>path</em>, <em>dynamic=True</em>, <em>static=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BETO.get_bert_embeddings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BETO.get_bert_embeddings" title="Permalink to this definition">¶</a></dt>
-<dd><p>BETO embeddings computation using Transformes. It store and transforms the texts into BETO embeddings. The embedings are stored in csv files.</p>
+<dd><p>BETO embeddings computation using Transformes. It store and transforms the texts into BETO embeddings. The embeddings are stored in csv files.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>path</strong> – path to save the embeddings</li>
-<li><strong>dynamic</strong> – boolean variable to compute the dynamic embeddings (True).</li>
-<li><strong>static</strong> – boolean variable to compute the static embeddings (False).</li>
+<li><strong>dynamic</strong> – boolean variable to compute the dynamic embeddings (By defalut: True).</li>
+<li><strong>static</strong> – boolean variable to compute the static embeddings (By defalut: False).</li>
 </ul>
 </td>
 </tr>
@@ -417,8 +416,8 @@ Also considers cased or uncased options, and remotion of stopwords.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>inputs</strong> – input data</li>
 <li><strong>file</strong> – name of the document.</li>
-<li><strong>stopwords</strong> – boolean variable for the stopword remotion (False).</li>
-<li><strong>cased</strong> – boolean variable to compute cased or lower-case model (False).</li>
+<li><strong>stopwords</strong> – boolean variable for removing stopwords (By defalut: False).</li>
+<li><strong>cased</strong> – boolean variable to compute cased or lower-case model (By defalut: False).</li>
 </ul>
 </td>
 </tr>
@@ -430,15 +429,15 @@ Also considers cased or uncased options, and remotion of stopwords.</p>
 <dl class="method">
 <dt id="WEBERT.SciBERT.get_bert_embeddings">
 <code class="descname">get_bert_embeddings</code><span class="sig-paren">(</span><em>path</em>, <em>dynamic=True</em>, <em>static=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#SciBERT.get_bert_embeddings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.SciBERT.get_bert_embeddings" title="Permalink to this definition">¶</a></dt>
-<dd><p>SciBert embeddings computation using Transformes. It store and transforms the texts into SciBERT embeddings. The embedings are stored in csv files.</p>
+<dd><p>SciBert embeddings computation using Transformes. It store and transforms the texts into SciBERT embeddings. The embeddings are stored in csv files.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>path</strong> – path to save the embeddings</li>
-<li><strong>dynamic</strong> – boolean variable to compute the dynamic embeddings (True).</li>
-<li><strong>static</strong> – boolean variable to compute the static embeddings (False).</li>
+<li><strong>dynamic</strong> – boolean variable to compute the dynamic embeddings (By defalut: True).</li>
+<li><strong>static</strong> – boolean variable to compute the static embeddings (By defalut: False).</li>
 </ul>
 </td>
 </tr>

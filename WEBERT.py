@@ -46,10 +46,10 @@ class BERT:
     
     :param inputs: input data
     :param file: name of the document.
-    :param language: input language (english).
-    :param stopwords: boolean variable for the stopword remotion (False).
-    :param model: base or large model (base).
-    :param cased: boolean variable to compute cased or lower-case model (False).
+    :param language: input language (By defalut: english).
+    :param stopwords: boolean variable for removing stopwords (By defalut: False).
+    :param model: base or large model (By defalut: base).
+    :param cased: boolean variable to compute cased or lower-case model (By defalut: False).
     :returns: WEBERT object
     """    
     
@@ -155,11 +155,11 @@ class BERT:
         
     def get_bert_embeddings(self, path, dynamic=True, static=False):
         """
-        Bert embeddings computation using Transformes. It store and transforms the texts into BERT embeddings. The embedings are stored in csv files.
+        Bert embeddings computation using Transformes. It store and transforms the texts into BERT embeddings. The embeddings are stored in csv files.
         
         :param path: path to save the embeddings
-        :param dynamic: boolean variable to compute the dynamic embeddings (True).
-        :param static: boolean variable to compute the static embeddings (False).
+        :param dynamic: boolean variable to compute the dynamic embeddings (By defalut: True).
+        :param static: boolean variable to compute the static embeddings (By defalut: False).
         :returns: static embeddings if static=True
         
         """  
@@ -251,16 +251,16 @@ class BERT:
 class BETO:
     """
     WEBERT-BETO computes BETO to get static or dynamic embeddings. 
-    BETO is a pretrained BERT model from spanish corpus (https://github.com/dccuchile/beto)
+    BETO is a pretrained BERT model from spanish corpus (https://github.com/dccuchile/beto).
     BETO uses Transformers (https://github.com/huggingface/transformers). 
     It can be computed using only spanish model.
     Also considers cased or uncased options, and remotion of stopwords.
     
     :param inputs: input data
     :param file: name of the document.
-    :param stopwords: boolean variable for the stopword remotion (False).
-    :param model: base or large model (base).
-    :param cased: boolean variable to compute cased or lower-case model (False).
+    :param stopwords: boolean variable for removing stopwords (By defalut: False).
+    :param model: base or large model (By defalut: base).
+    :param cased: boolean variable to compute cased or lower-case model (By defalut: False).
     :returns: WEBERT object
     """    
     
@@ -365,11 +365,11 @@ class BETO:
         
     def get_bert_embeddings(self, path, dynamic=True, static=False):
         """
-        BETO embeddings computation using Transformes. It store and transforms the texts into BETO embeddings. The embedings are stored in csv files.
+        BETO embeddings computation using Transformes. It store and transforms the texts into BETO embeddings. The embeddings are stored in csv files.
         
         :param path: path to save the embeddings
-        :param dynamic: boolean variable to compute the dynamic embeddings (True).
-        :param static: boolean variable to compute the static embeddings (False).
+        :param dynamic: boolean variable to compute the dynamic embeddings (By defalut: True).
+        :param static: boolean variable to compute the static embeddings (By defalut: False).
         :returns: static embeddings if static=True
         
         """  
@@ -468,8 +468,8 @@ class SciBERT:
     
     :param inputs: input data
     :param file: name of the document.
-    :param stopwords: boolean variable for the stopword remotion (False).
-    :param cased: boolean variable to compute cased or lower-case model (False).
+    :param stopwords: boolean variable for removing stopwords (By defalut: False).
+    :param cased: boolean variable to compute cased or lower-case model (By defalut: False).
     :returns: WEBERT object
     """    
     
@@ -575,11 +575,11 @@ class SciBERT:
         
     def get_bert_embeddings(self, path, dynamic=True, static=False):
         """
-        SciBert embeddings computation using Transformes. It store and transforms the texts into SciBERT embeddings. The embedings are stored in csv files.
+        SciBert embeddings computation using Transformes. It store and transforms the texts into SciBERT embeddings. The embeddings are stored in csv files.
         
         :param path: path to save the embeddings
-        :param dynamic: boolean variable to compute the dynamic embeddings (True).
-        :param static: boolean variable to compute the static embeddings (False).
+        :param dynamic: boolean variable to compute the dynamic embeddings (By defalut: True).
+        :param static: boolean variable to compute the static embeddings (By defalut: False).
         :returns: static embeddings if static=True
         
         """  

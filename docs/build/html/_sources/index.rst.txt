@@ -1,7 +1,7 @@
 Welcome to WEBERT's documentation!
 ============================================================
 This toolkit computes word embeddings using Bidirectional Encoder Representations from Transformers (BERT) for cased and large models in spanish and english automatically.
-BERT embeddings are computed using Transformers (https://github.com/huggingface/transformers). The project is ongoing.
+BERT embeddings are computed using Transformers (https://github.com/huggingface/transformers). The project is currently ongoing.
 
 The code for this project is available at https://github.com/PauPerezT/WEBERT
 
@@ -30,7 +30,7 @@ To install the requeriments, please run::
 Executing commands
 ^^^^^^^^^^^^^^^^^^
     
-This are
+
 
 Run it automatically from linux terminal
 ----------------------------------------
@@ -45,12 +45,12 @@ To compute Bert embeddings automatically
     Optional arguments    Optional Values      Description
     ====================  ===================  =====================================================================================
     -h                                         Show this help message and exit
-    -f                                         File folder of the set of txt documents. 
+    -f                                         Path folder of the txt documents (Only txt format). 
                                                
-                                               By defaul './texts'
+                                               By default './texts'
     -s                                         Path to save the embeddings. 
     
-                                               By defaul './bert_embeddings'
+                                               By default './bert_embeddings'
     -bm                   Bert,Beto,SciBert    Choose between three different BERT models.
     
                                                By default BERT				             

@@ -180,10 +180,6 @@
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">kurtosis</span><span class="p">,</span> <span class="n">skew</span>
 
 
-
-
-
-
 <span class="c1">#%%</span>
 <span class="c1"># specify GPU device</span>
 
@@ -205,10 +201,10 @@
 <span class="sd">    </span>
 <span class="sd">    :param inputs: input data</span>
 <span class="sd">    :param file: name of the document.</span>
-<span class="sd">    :param language: input language (english).</span>
-<span class="sd">    :param stopwords: boolean variable for the stopword remotion (False).</span>
-<span class="sd">    :param model: base or large model (base).</span>
-<span class="sd">    :param cased: boolean variable to compute cased or lower-case model (False).</span>
+<span class="sd">    :param language: input language (By defalut: english).</span>
+<span class="sd">    :param stopwords: boolean variable for removing stopwords (By defalut: False).</span>
+<span class="sd">    :param model: base or large model (By defalut: base).</span>
+<span class="sd">    :param cased: boolean variable to compute cased or lower-case model (By defalut: False).</span>
 <span class="sd">    :returns: WEBERT object</span>
 <span class="sd">    &quot;&quot;&quot;</span>    
     
@@ -314,11 +310,11 @@
         
 <div class="viewcode-block" id="BERT.get_bert_embeddings"><a class="viewcode-back" href="../index.html#WEBERT.BERT.get_bert_embeddings">[docs]</a>    <span class="k">def</span> <span class="nf">get_bert_embeddings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">static</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Bert embeddings computation using Transformes. It store and transforms the texts into BERT embeddings. The embedings are stored in csv files.</span>
+<span class="sd">        Bert embeddings computation using Transformes. It store and transforms the texts into BERT embeddings. The embeddings are stored in csv files.</span>
 <span class="sd">        </span>
 <span class="sd">        :param path: path to save the embeddings</span>
-<span class="sd">        :param dynamic: boolean variable to compute the dynamic embeddings (True).</span>
-<span class="sd">        :param static: boolean variable to compute the static embeddings (False).</span>
+<span class="sd">        :param dynamic: boolean variable to compute the dynamic embeddings (By defalut: True).</span>
+<span class="sd">        :param static: boolean variable to compute the static embeddings (By defalut: False).</span>
 <span class="sd">        :returns: static embeddings if static=True</span>
 <span class="sd">        </span>
 <span class="sd">        &quot;&quot;&quot;</span>  
@@ -410,16 +406,16 @@
 <div class="viewcode-block" id="BETO"><a class="viewcode-back" href="../index.html#WEBERT.BETO">[docs]</a><span class="k">class</span> <span class="nc">BETO</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    WEBERT-BETO computes BETO to get static or dynamic embeddings. </span>
-<span class="sd">    BETO is a pretrained BERT model from spanish corpus (https://github.com/dccuchile/beto)</span>
+<span class="sd">    BETO is a pretrained BERT model from spanish corpus (https://github.com/dccuchile/beto).</span>
 <span class="sd">    BETO uses Transformers (https://github.com/huggingface/transformers). </span>
 <span class="sd">    It can be computed using only spanish model.</span>
 <span class="sd">    Also considers cased or uncased options, and remotion of stopwords.</span>
 <span class="sd">    </span>
 <span class="sd">    :param inputs: input data</span>
 <span class="sd">    :param file: name of the document.</span>
-<span class="sd">    :param stopwords: boolean variable for the stopword remotion (False).</span>
-<span class="sd">    :param model: base or large model (base).</span>
-<span class="sd">    :param cased: boolean variable to compute cased or lower-case model (False).</span>
+<span class="sd">    :param stopwords: boolean variable for removing stopwords (By defalut: False).</span>
+<span class="sd">    :param model: base or large model (By defalut: base).</span>
+<span class="sd">    :param cased: boolean variable to compute cased or lower-case model (By defalut: False).</span>
 <span class="sd">    :returns: WEBERT object</span>
 <span class="sd">    &quot;&quot;&quot;</span>    
     
@@ -524,11 +520,11 @@
         
 <div class="viewcode-block" id="BETO.get_bert_embeddings"><a class="viewcode-back" href="../index.html#WEBERT.BETO.get_bert_embeddings">[docs]</a>    <span class="k">def</span> <span class="nf">get_bert_embeddings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">static</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        BETO embeddings computation using Transformes. It store and transforms the texts into BETO embeddings. The embedings are stored in csv files.</span>
+<span class="sd">        BETO embeddings computation using Transformes. It store and transforms the texts into BETO embeddings. The embeddings are stored in csv files.</span>
 <span class="sd">        </span>
 <span class="sd">        :param path: path to save the embeddings</span>
-<span class="sd">        :param dynamic: boolean variable to compute the dynamic embeddings (True).</span>
-<span class="sd">        :param static: boolean variable to compute the static embeddings (False).</span>
+<span class="sd">        :param dynamic: boolean variable to compute the dynamic embeddings (By defalut: True).</span>
+<span class="sd">        :param static: boolean variable to compute the static embeddings (By defalut: False).</span>
 <span class="sd">        :returns: static embeddings if static=True</span>
 <span class="sd">        </span>
 <span class="sd">        &quot;&quot;&quot;</span>  
@@ -627,8 +623,8 @@
 <span class="sd">    </span>
 <span class="sd">    :param inputs: input data</span>
 <span class="sd">    :param file: name of the document.</span>
-<span class="sd">    :param stopwords: boolean variable for the stopword remotion (False).</span>
-<span class="sd">    :param cased: boolean variable to compute cased or lower-case model (False).</span>
+<span class="sd">    :param stopwords: boolean variable for removing stopwords (By defalut: False).</span>
+<span class="sd">    :param cased: boolean variable to compute cased or lower-case model (By defalut: False).</span>
 <span class="sd">    :returns: WEBERT object</span>
 <span class="sd">    &quot;&quot;&quot;</span>    
     
@@ -734,11 +730,11 @@
         
 <div class="viewcode-block" id="SciBERT.get_bert_embeddings"><a class="viewcode-back" href="../index.html#WEBERT.SciBERT.get_bert_embeddings">[docs]</a>    <span class="k">def</span> <span class="nf">get_bert_embeddings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">dynamic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">static</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        SciBert embeddings computation using Transformes. It store and transforms the texts into SciBERT embeddings. The embedings are stored in csv files.</span>
+<span class="sd">        SciBert embeddings computation using Transformes. It store and transforms the texts into SciBERT embeddings. The embeddings are stored in csv files.</span>
 <span class="sd">        </span>
 <span class="sd">        :param path: path to save the embeddings</span>
-<span class="sd">        :param dynamic: boolean variable to compute the dynamic embeddings (True).</span>
-<span class="sd">        :param static: boolean variable to compute the static embeddings (False).</span>
+<span class="sd">        :param dynamic: boolean variable to compute the dynamic embeddings (By defalut: True).</span>
+<span class="sd">        :param static: boolean variable to compute the static embeddings (By defalut: False).</span>
 <span class="sd">        :returns: static embeddings if static=True</span>
 <span class="sd">        </span>
 <span class="sd">        &quot;&quot;&quot;</span>  
