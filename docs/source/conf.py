@@ -36,7 +36,7 @@ version = ''
 release = ''
 
 #LOGO
-#html_logo = '../logos/disvoice_logo.png' html_favicon = '../logos/disvoice_favicon.ico'
+html_logo = '../../logos/logo_web.png' html_favicon = '../../logos/logo.ico'
 
 # -- General configuration ---------------------------------------------------
 

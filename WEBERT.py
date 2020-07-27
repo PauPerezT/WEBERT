@@ -1,18 +1,7 @@
 
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-BERT Embeddings
 
-->BERT.py
-
-Created on Fri Feb  7 19:19:38 2020
-
-@author: P.A. Perez-Toro
-@email:paula.perezt@udea.edu.co
-
-
-"""
 #%% Libraries
 from torch.utils.data import Dataset
 import torch
@@ -60,6 +49,7 @@ class BERT:
     def __init__(self,inputs,file_names, language='english', stopwords=False, model='base', cased=False):
         """
         It computes BERT to get static or dynamic embeddings. BERT uses Transformers (https://github.com/huggingface/transformers). It can be computed using english and spanish (multilingual) model. Also considers cased or uncased options, and remotion of stopwords.
+        
         :param data: input data
         :param file names: name of the document.
         :param language: input language (english).
@@ -97,10 +87,12 @@ class BERT:
         
         
     def __preprocessing(self):
+        
         """
         Text Pre-processing
 
         """
+        
         docs=[]
         for j in range (len(self.data)):
             
@@ -125,6 +117,7 @@ class BERT:
             
     
     def __data_preparation(self):
+        
         """
         Data preparation and adaptation for BERT to work properly
 
@@ -165,10 +158,12 @@ class BERT:
     def get_bert_embeddings(self, path, dynamic=True, static=False):
         """
         Bert embeddings computation using Transformes. It store and transforms the texts into BERT embeddings. The embedings are stored in csv files.
+        
         :param path: path to save the embeddings
         :param dynamic: boolean variable to compute the dynamic embeddings (True).
         :param static: boolean variable to compute the static embeddings (False).
         :returns: static embeddings if static=True
+        
         """  
         
         self.__data_preparation()
