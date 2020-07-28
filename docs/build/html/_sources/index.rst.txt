@@ -23,7 +23,7 @@ From the source file::
     
 To install the requeriments, please run::
 
-    ./install.sh
+    install.sh
 
 
 
@@ -63,6 +63,7 @@ Optional arguments    Optional Values      Description
                                            
                                            skeweness, min and max. By default False.                       
 -l                    english, spanish     Chosen language (only available for BERT model).
+
                                            By default english.                               
 -sw                   True, False          Boolean value, set True if you want to remove
 
@@ -72,10 +73,10 @@ Optional arguments    Optional Values      Description
                                            By default base.                                   
 -c                    True, False          Boolean value for cased= True o lower-cased= False
 
-                                           models. No avalaible for SciBert. By defaul False.
+                                           models. No avalaible for SciBert. By default False.
 -cu                    True, False         Boolean value for using cuda to compute the 
                                             
-                                           embeddings (True). By defaul False.                                                   
+                                           embeddings (True). By default False.                                                   
 ====================  ===================  =====================================================================================
 
 
