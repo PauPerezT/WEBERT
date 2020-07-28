@@ -5,10 +5,10 @@ WEBERT
 .. image:: https://github.com/PauPerezT/WEBERT/blob/master/logos/logo_web.png?raw=true
 
 Getting BERT embeddings from Transformers.
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3964244.svg
+   :target: https://doi.org/10.5281/zenodo.3964244
+   :alt: Citation
 
-.. image:: https://readthedocs.org/projects/webert/badge/?version=latest
-:target: https://webert.readthedocs.io/en/latest/
-:alt: Documentation Status
 
 "WEBERT: Word Embedding using BERT"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -17,6 +17,11 @@ WEBERT is a python toolkit designed to help students to compute dynamic and stat
 It was test on linux.
 
 The code for this project is available at https://github.com/PauPerezT/WEBERT
+
+   
+.. image:: https://readthedocs.org/projects/webert/badge/?version=latest
+:target: https://webert.readthedocs.io/en/latest/
+:alt: Documentation Status
 
 From this repository::
 
