@@ -50,7 +50,7 @@ class BERT:
     :param stopwords: boolean variable for removing stopwords (By defalut: False).
     :param model: base or large model (By defalut: base).
     :param cased: boolean variable to compute cased or lower-case model (By defalut: False).
-    :param cased: boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).
+    :param cuda: boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).
     :returns: WEBERT object
     """    
     
@@ -267,7 +267,7 @@ class BETO:
     :param stopwords: boolean variable for removing stopwords (By defalut: False).
     :param model: base or large model (By defalut: base).
     :param cased: boolean variable to compute cased or lower-case model (By defalut: False).
-    :param cased: boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).
+    :param cuda: boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).
     :returns: WEBERT object
     """    
     
@@ -480,7 +480,7 @@ class SciBERT:
     :param file: name of the document.
     :param stopwords: boolean variable for removing stopwords (By defalut: False).
     :param cased: boolean variable to compute cased or lower-case model (By defalut: False).
-    :param cased: boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).
+    :param cuda: boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).
     :returns: WEBERT object
     """    
     
