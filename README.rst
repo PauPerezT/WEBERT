@@ -30,3 +30,9 @@ To install the requeriments, please run::
     install.sh
     
 `Project Documentation <https://webert.readthedocs.io/en/latest/>`_
+
+
+License
+^^^^^^^^
+
+Apache
