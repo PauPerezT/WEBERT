@@ -5,6 +5,7 @@ WEBERT
 .. image:: https://github.com/PauPerezT/WEBERT/blob/master/logos/logo_web.png?raw=true
 
 Getting BERT embeddings from Transformers.
+
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.3964244.svg
    :target: https://doi.org/10.5281/zenodo.3964244
    :alt: Citation
