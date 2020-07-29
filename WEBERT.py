@@ -42,7 +42,7 @@ class BERT:
     WEBERT-BERT computes BERT to get static or dynamic embeddings. 
     BERT uses Transformers (https://github.com/huggingface/transformers). 
     It can be computed using english and spanish (multilingual) model.
-    Also considers cased or uncased options, and stopwords removal.
+    Also considers cased or uncased options, and stopword removal.
     
     :param inputs: input data
     :param file: name of the document.
@@ -260,7 +260,7 @@ class BETO:
     BETO is a pretrained BERT model from spanish corpus (https://github.com/dccuchile/beto).
     BETO uses Transformers (https://github.com/huggingface/transformers). 
     It can be computed using only spanish model.
-    Also considers cased or uncased options, and stopwords removal.
+    Also considers cased or uncased options, and stopword removal.
     
     :param inputs: input data
     :param file: name of the document.
@@ -474,7 +474,7 @@ class SciBERT:
     SCIBERT is a pre-trained model on english scientific text (https://github.com/allenai/scibert).
     BERT uses Transformers (https://github.com/huggingface/transformers). 
     This toolkit only considered the scivocab model.
-    Also considers cased or uncased options, and stopwords removal.
+    Also considers cased or uncased options, and stopword removal.
     
     :param inputs: input data
     :param file: name of the document.
