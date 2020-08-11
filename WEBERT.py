@@ -12,7 +12,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 import torchvision as tv
 import os
-
+import gc
 from torch.utils.data import DataLoader
 
 from transformers import BertTokenizer, BertModel
@@ -674,9 +674,29 @@ class SciBERT:
             maxBERT=np.max(wordar, axis=0)
             statisticalMeasures=np.hstack((meanBERT, stdBERT, kurtosisBERT, skewnessBERT,minBERT, maxBERT))
             
+            del embeddings
+            #del bert_embeddings
+            del bert
+            del self.data_dataloader
+            del self.tokenized_texts
+            del self.data
+            
+            
+            torch.cuda.empty_cache()
+            
             
                    
             return statisticalMeasures
+        else:
+            del embeddings
+            #del bert_embeddings
+            del bert
+            del self.data_dataloader
+            del self.tokenized_texts
+            del self.data
+            
+            gc.collect()
+            torch.cuda.empty_cache()
         
         
             

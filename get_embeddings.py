@@ -14,6 +14,7 @@ from utils import create_fold
 import csv
 from tqdm import tqdm
 import os
+import gc
 import numpy as np
 import pandas as pd
 from WEBERT import BERT, BETO, SciBERT
@@ -117,5 +118,7 @@ if __name__ == '__main__':
             with open(folder_path_static+bert_model+'_Static_Features.csv', 'a') as f:
                 writer = csv.writer(f)
                 writer.writerow(np.hstack((file_name, data_stat)))
+                gc.collect()
         else:
             bert.get_bert_embeddings(folder_path, dynamic=dynamic, static=static)
+            gc.collect()
