@@ -250,6 +250,16 @@ class BERT:
                    
             return statisticalMeasures
         
+        else:
+            del embeddings
+            #del bert_embeddings
+            del bert
+            del self.data_dataloader
+            del self.tokenized_texts
+            del self.data
+            
+            gc.collect()
+        
         
 
                 
@@ -463,6 +473,15 @@ class BETO:
             
                    
             return statisticalMeasures
+        else:
+            del embeddings
+            #del bert_embeddings
+            del bert
+            del self.data_dataloader
+            del self.tokenized_texts
+            del self.data
+            
+            gc.collect()
                         
             
 
@@ -682,7 +701,7 @@ class SciBERT:
             del self.data
             
             
-            torch.cuda.empty_cache()
+
             
             
                    
@@ -696,7 +715,7 @@ class SciBERT:
             del self.data
             
             gc.collect()
-            torch.cuda.empty_cache()
+            
         
         
             
