@@ -78,7 +78,7 @@ class BERT:
         
         self.model='bert-'+model+'-'+cased_str
         if self.language=='spanish':
-            self.model='bert-'+model+'-multilingual-'+cased
+            self.model='bert-'+model+'-multilingual-'+cased_str
             
         if cuda:
             self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
