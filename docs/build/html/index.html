@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -28,10 +28,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -187,289 +187,263 @@ BERT embeddings are computed using Transformers (<a class="reference external" h
 <div class="section" id="run-it-automatically-from-linux-terminal">
 <h3>Run it automatically from linux terminal<a class="headerlink" href="#run-it-automatically-from-linux-terminal" title="Permalink to this headline">¶</a></h3>
 <p>To compute Bert embeddings automatically</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="16%" />
-<col width="15%" />
-<col width="69%" />
+<col style="width: 16%" />
+<col style="width: 15%" />
+<col style="width: 69%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Optional arguments</th>
-<th class="head">Optional Values</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Optional arguments</p></th>
+<th class="head"><p>Optional Values</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>-h</td>
-<td>&#160;</td>
-<td>Show this help message and exit</td>
+<tbody>
+<tr class="row-even"><td><p>-h</p></td>
+<td></td>
+<td><p>Show this help message and exit</p></td>
 </tr>
-<tr class="row-odd"><td>-f</td>
-<td>&#160;</td>
-<td><p class="first">Path folder of the txt documents (Only txt format).</p>
-<p class="last">By default ‘./texts’</p>
+<tr class="row-odd"><td><p>-f</p></td>
+<td></td>
+<td><p>Path folder of the txt documents (Only txt format).</p>
+<p>By default ‘./texts’</p>
 </td>
 </tr>
-<tr class="row-even"><td>-s</td>
-<td>&#160;</td>
-<td><p class="first">Path to save the embeddings.</p>
-<p class="last">By default ‘./bert_embeddings’</p>
+<tr class="row-even"><td><p>-sv</p></td>
+<td></td>
+<td><blockquote>
+<div><p>Path to save the embeddings.</p>
+</div></blockquote>
+<p>By default ‘./bert_embeddings’</p>
 </td>
 </tr>
-<tr class="row-odd"><td>-bm</td>
-<td>Bert, Beto, SciBert</td>
-<td><p class="first">Choose between three different BERT models.</p>
-<p class="last">By default BERT</p>
+<tr class="row-odd"><td><p>-bm</p></td>
+<td><p>Bert, Beto, SciBert</p></td>
+<td><p>Choose between three different BERT models.</p>
+<p>By default BERT</p>
 </td>
 </tr>
-<tr class="row-even"><td>-d</td>
-<td>True, False</td>
-<td><p class="first">Boolean value to get dynamic features= True.</p>
-<p class="last">By default True.</p>
+<tr class="row-even"><td><p>-d</p></td>
+<td><p>True, False</p></td>
+<td><p>Boolean value to get dynamic features= True.</p>
+<p>By default True.</p>
 </td>
 </tr>
-<tr class="row-odd"><td>-st</td>
-<td>True, False</td>
-<td><p class="first">Boolean value to get static features= True from the</p>
+<tr class="row-odd"><td><p>-st</p></td>
+<td><p>True, False</p></td>
+<td><p>Boolean value to get static features= True from the</p>
 <p>embeddings such as mean, standard deviation, kurtosis,</p>
-<p class="last">skeweness, min and max. By default False.</p>
+<p>skeweness, min and max. By default False.</p>
 </td>
 </tr>
-<tr class="row-even"><td>-l</td>
-<td>english, spanish</td>
-<td><p class="first">Chosen language (only available for BERT model).</p>
-<p class="last">By default english.</p>
+<tr class="row-even"><td><p>-l</p></td>
+<td><p>english, spanish</p></td>
+<td><p>Chosen language (only available for BERT model).</p>
+<p>By default english.</p>
 </td>
 </tr>
-<tr class="row-odd"><td>-sw</td>
-<td>True, False</td>
-<td><p class="first">Boolean value, set True if you want to remove</p>
-<p class="last">stopwords. By default False.</p>
+<tr class="row-odd"><td><p>-sw</p></td>
+<td><p>True, False</p></td>
+<td><p>Boolean value, set True if you want to remove</p>
+<p>stopwords. By default False.</p>
 </td>
 </tr>
-<tr class="row-even"><td>-m</td>
-<td>base, large</td>
-<td><p class="first">Bert models, two options base and large.</p>
-<p class="last">By default base.</p>
+<tr class="row-even"><td><p>-m</p></td>
+<td><p>base, large</p></td>
+<td><p>Bert models, two options base and large.</p>
+<p>By default base.</p>
 </td>
 </tr>
-<tr class="row-odd"><td>-c</td>
-<td>True, False</td>
-<td><p class="first">Boolean value for cased= True o lower-cased= False</p>
-<p class="last">models. No avalaible for SciBert. By default False.</p>
+<tr class="row-odd"><td><p>-ca</p></td>
+<td><p>True, False</p></td>
+<td><blockquote>
+<div><p>Boolean value for cased= True o lower-cased= False</p>
+</div></blockquote>
+<p>models. No avalaible for SciBert. By default False.</p>
 </td>
 </tr>
-<tr class="row-even"><td>-cu</td>
-<td>True, False</td>
-<td><p class="first">Boolean value for using cuda to compute the</p>
-<p class="last">embeddings (True). By default False.</p>
+<tr class="row-even"><td><p>-cu</p></td>
+<td><p>True, False</p></td>
+<td><p>Boolean value for using cuda to compute the</p>
+<p>embeddings (True). By default False.</p>
 </td>
 </tr>
 </tbody>
 </table>
 <p>Usage example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">get_embeddings</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="o">./</span><span class="n">texts</span><span class="o">/</span> <span class="o">-</span><span class="n">s</span> <span class="o">./</span><span class="n">bert_embs</span> <span class="o">-</span><span class="n">bm</span> <span class="n">Bert</span> <span class="o">-</span><span class="n">d</span> <span class="kc">True</span> <span class="o">-</span><span class="n">st</span> <span class="kc">True</span> <span class="o">-</span><span class="n">l</span> <span class="n">english</span> <span class="o">-</span><span class="n">sw</span> <span class="kc">True</span> <span class="o">-</span><span class="n">m</span> <span class="n">base</span> <span class="o">-</span><span class="n">c</span> <span class="kc">True</span> <span class="o">-</span><span class="n">cu</span> <span class="kc">True</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">get_embeddings</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="o">./</span><span class="n">texts</span><span class="o">/</span> <span class="o">-</span><span class="n">sv</span> <span class="o">./</span><span class="n">bert_embs</span> <span class="o">-</span><span class="n">bm</span> <span class="n">Bert</span> <span class="o">-</span><span class="n">d</span> <span class="kc">True</span> <span class="o">-</span><span class="n">st</span> <span class="kc">True</span> <span class="o">-</span><span class="n">l</span> <span class="n">english</span> <span class="o">-</span><span class="n">sw</span> <span class="kc">True</span> <span class="o">-</span><span class="n">m</span> <span class="n">base</span> <span class="o">-</span><span class="n">ca</span> <span class="kc">True</span> <span class="o">-</span><span class="n">cu</span> <span class="kc">True</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="module-WEBERT">
 <span id="methods"></span><h3>Methods<a class="headerlink" href="#module-WEBERT" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
+<dl class="py class">
 <dt id="WEBERT.BERT">
-<em class="property">class </em><code class="descclassname">WEBERT.</code><code class="descname">BERT</code><span class="sig-paren">(</span><em>inputs</em>, <em>file</em>, <em>language='english'</em>, <em>stopwords=False</em>, <em>model='base'</em>, <em>cased=False</em>, <em>cuda=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BERT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BERT" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">WEBERT.</code><code class="sig-name descname">BERT</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inputs</span></em>, <em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">language</span><span class="o">=</span><span class="default_value">'english'</span></em>, <em class="sig-param"><span class="n">stopwords</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">model</span><span class="o">=</span><span class="default_value">'base'</span></em>, <em class="sig-param"><span class="n">cased</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">cuda</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BERT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BERT" title="Permalink to this definition">¶</a></dt>
 <dd><p>WEBERT-BERT computes BERT to get static or dynamic embeddings. 
 BERT uses Transformers (<a class="reference external" href="https://github.com/huggingface/transformers">https://github.com/huggingface/transformers</a>). 
 It can be computed using english and spanish (multilingual) model.
 Also considers cased or uncased options, and stopword removal.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>inputs</strong> – input data</li>
-<li><strong>file</strong> – name of the document.</li>
-<li><strong>language</strong> – input language (By defalut: english).</li>
-<li><strong>stopwords</strong> – boolean variable for removing stopwords (By defalut: False).</li>
-<li><strong>model</strong> – base or large model (By defalut: base).</li>
-<li><strong>cased</strong> – boolean variable to compute cased or lower-case model (By defalut: False).</li>
-<li><strong>cuda</strong> – boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – input data</p></li>
+<li><p><strong>file</strong> – name of the document.</p></li>
+<li><p><strong>language</strong> – input language (By defalut: english).</p></li>
+<li><p><strong>stopwords</strong> – boolean variable for removing stopwords (By defalut: False).</p></li>
+<li><p><strong>model</strong> – base or large model (By defalut: base).</p></li>
+<li><p><strong>cased</strong> – boolean variable to compute cased or lower-case model (By defalut: False).</p></li>
+<li><p><strong>cuda</strong> – boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">WEBERT object</p>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>WEBERT object</p>
+</dd>
+</dl>
+<dl class="py method">
 <dt id="WEBERT.BERT.get_bert_embeddings">
-<code class="descname">get_bert_embeddings</code><span class="sig-paren">(</span><em>path</em>, <em>dynamic=True</em>, <em>static=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BERT.get_bert_embeddings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BERT.get_bert_embeddings" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_bert_embeddings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">dynamic</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">static</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BERT.get_bert_embeddings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BERT.get_bert_embeddings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bert embeddings computation using Transformes. It store and transforms the texts into BERT embeddings. The embeddings are stored in csv files.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>path</strong> – path to save the embeddings</li>
-<li><strong>dynamic</strong> – boolean variable to compute the dynamic embeddings (By defalut: True).</li>
-<li><strong>static</strong> – boolean variable to compute the static embeddings (By defalut: False).</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – path to save the embeddings</p></li>
+<li><p><strong>dynamic</strong> – boolean variable to compute the dynamic embeddings (By defalut: True).</p></li>
+<li><p><strong>static</strong> – boolean variable to compute the static embeddings (By defalut: False).</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">static embeddings if static=True</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>static embeddings if static=True</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="WEBERT.BERT.preprocessing">
-<code class="descname">preprocessing</code><span class="sig-paren">(</span><em>inputs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BERT.preprocessing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BERT.preprocessing" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">preprocessing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inputs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BERT.preprocessing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BERT.preprocessing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Text Pre-processing</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>inputs</strong> – input data</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">proprocessed text</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputs</strong> – input data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>proprocessed text</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="WEBERT.BETO">
-<em class="property">class </em><code class="descclassname">WEBERT.</code><code class="descname">BETO</code><span class="sig-paren">(</span><em>inputs</em>, <em>file</em>, <em>stopwords=False</em>, <em>model='base'</em>, <em>cased=False</em>, <em>cuda=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BETO"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BETO" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">WEBERT.</code><code class="sig-name descname">BETO</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inputs</span></em>, <em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">stopwords</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">model</span><span class="o">=</span><span class="default_value">'base'</span></em>, <em class="sig-param"><span class="n">cased</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">cuda</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BETO"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BETO" title="Permalink to this definition">¶</a></dt>
 <dd><p>WEBERT-BETO computes BETO to get static or dynamic embeddings. 
 BETO is a pretrained BERT model from spanish corpus (<a class="reference external" href="https://github.com/dccuchile/beto">https://github.com/dccuchile/beto</a>).
 BETO uses Transformers (<a class="reference external" href="https://github.com/huggingface/transformers">https://github.com/huggingface/transformers</a>). 
 It can be computed using only spanish model.
 Also considers cased or uncased options, and stopword removal.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>inputs</strong> – input data</li>
-<li><strong>file</strong> – name of the document.</li>
-<li><strong>stopwords</strong> – boolean variable for removing stopwords (By defalut: False).</li>
-<li><strong>model</strong> – base or large model (By defalut: base).</li>
-<li><strong>cased</strong> – boolean variable to compute cased or lower-case model (By defalut: False).</li>
-<li><strong>cuda</strong> – boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – input data</p></li>
+<li><p><strong>file</strong> – name of the document.</p></li>
+<li><p><strong>stopwords</strong> – boolean variable for removing stopwords (By defalut: False).</p></li>
+<li><p><strong>model</strong> – base or large model (By defalut: base).</p></li>
+<li><p><strong>cased</strong> – boolean variable to compute cased or lower-case model (By defalut: False).</p></li>
+<li><p><strong>cuda</strong> – boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">WEBERT object</p>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>WEBERT object</p>
+</dd>
+</dl>
+<dl class="py method">
 <dt id="WEBERT.BETO.get_bert_embeddings">
-<code class="descname">get_bert_embeddings</code><span class="sig-paren">(</span><em>path</em>, <em>dynamic=True</em>, <em>static=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BETO.get_bert_embeddings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BETO.get_bert_embeddings" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_bert_embeddings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">dynamic</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">static</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BETO.get_bert_embeddings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BETO.get_bert_embeddings" title="Permalink to this definition">¶</a></dt>
 <dd><p>BETO embeddings computation using Transformes. It store and transforms the texts into BETO embeddings. The embeddings are stored in csv files.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>path</strong> – path to save the embeddings</li>
-<li><strong>dynamic</strong> – boolean variable to compute the dynamic embeddings (By defalut: True).</li>
-<li><strong>static</strong> – boolean variable to compute the static embeddings (By defalut: False).</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – path to save the embeddings</p></li>
+<li><p><strong>dynamic</strong> – boolean variable to compute the dynamic embeddings (By defalut: True).</p></li>
+<li><p><strong>static</strong> – boolean variable to compute the static embeddings (By defalut: False).</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">static embeddings if static=True</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>static embeddings if static=True</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="WEBERT.BETO.preprocessing">
-<code class="descname">preprocessing</code><span class="sig-paren">(</span><em>inputs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BETO.preprocessing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BETO.preprocessing" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">preprocessing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inputs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#BETO.preprocessing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.BETO.preprocessing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Text Pre-processing</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>inputs</strong> – input data</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">proprocessed text</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputs</strong> – input data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>proprocessed text</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="WEBERT.SciBERT">
-<em class="property">class </em><code class="descclassname">WEBERT.</code><code class="descname">SciBERT</code><span class="sig-paren">(</span><em>inputs</em>, <em>file</em>, <em>stopwords=False</em>, <em>cased=False</em>, <em>cuda=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#SciBERT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.SciBERT" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">WEBERT.</code><code class="sig-name descname">SciBERT</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inputs</span></em>, <em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">stopwords</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">cased</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">cuda</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#SciBERT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.SciBERT" title="Permalink to this definition">¶</a></dt>
 <dd><p>WEBERT-SCIBERT computes BERT to get static or dynamic embeddings. 
 SCIBERT is a pre-trained model on english scientific text (<a class="reference external" href="https://github.com/allenai/scibert">https://github.com/allenai/scibert</a>).
 BERT uses Transformers (<a class="reference external" href="https://github.com/huggingface/transformers">https://github.com/huggingface/transformers</a>). 
 This toolkit only considered the scivocab model.
 Also considers cased or uncased options, and stopword removal.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>inputs</strong> – input data</li>
-<li><strong>file</strong> – name of the document.</li>
-<li><strong>stopwords</strong> – boolean variable for removing stopwords (By defalut: False).</li>
-<li><strong>cased</strong> – boolean variable to compute cased or lower-case model (By defalut: False).</li>
-<li><strong>cuda</strong> – boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputs</strong> – input data</p></li>
+<li><p><strong>file</strong> – name of the document.</p></li>
+<li><p><strong>stopwords</strong> – boolean variable for removing stopwords (By defalut: False).</p></li>
+<li><p><strong>cased</strong> – boolean variable to compute cased or lower-case model (By defalut: False).</p></li>
+<li><p><strong>cuda</strong> – boolean value for using cuda to compute the embeddings, True for using it. (By defalut: False).</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">WEBERT object</p>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>WEBERT object</p>
+</dd>
+</dl>
+<dl class="py method">
 <dt id="WEBERT.SciBERT.get_bert_embeddings">
-<code class="descname">get_bert_embeddings</code><span class="sig-paren">(</span><em>path</em>, <em>dynamic=True</em>, <em>static=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#SciBERT.get_bert_embeddings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.SciBERT.get_bert_embeddings" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_bert_embeddings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">dynamic</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">static</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#SciBERT.get_bert_embeddings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.SciBERT.get_bert_embeddings" title="Permalink to this definition">¶</a></dt>
 <dd><p>SciBert embeddings computation using Transformes. It store and transforms the texts into SciBERT embeddings. The embeddings are stored in csv files.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>path</strong> – path to save the embeddings</li>
-<li><strong>dynamic</strong> – boolean variable to compute the dynamic embeddings (By defalut: True).</li>
-<li><strong>static</strong> – boolean variable to compute the static embeddings (By defalut: False).</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – path to save the embeddings</p></li>
+<li><p><strong>dynamic</strong> – boolean variable to compute the dynamic embeddings (By defalut: True).</p></li>
+<li><p><strong>static</strong> – boolean variable to compute the static embeddings (By defalut: False).</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">static embeddings if static=True</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>static embeddings if static=True</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="WEBERT.SciBERT.preprocessing">
-<code class="descname">preprocessing</code><span class="sig-paren">(</span><em>inputs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#SciBERT.preprocessing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.SciBERT.preprocessing" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">preprocessing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inputs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WEBERT.html#SciBERT.preprocessing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#WEBERT.SciBERT.preprocessing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Text Pre-processing</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>inputs</strong> – input data</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">proprocessed text</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputs</strong> – input data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>proprocessed text</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -480,9 +454,9 @@ Also considers cased or uncased options, and stopword removal.</p>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
 </div>
 

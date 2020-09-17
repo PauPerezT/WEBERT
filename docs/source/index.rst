@@ -48,7 +48,7 @@ Optional arguments    Optional Values      Description
 -f                                         Path folder of the txt documents (Only txt format). 
                                            
                                            By default './texts'
--s                                         Path to save the embeddings. 
+-sv                                         Path to save the embeddings. 
 
                                            By default './bert_embeddings'
 -bm                   Bert, Beto, SciBert  Choose between three different BERT models.
@@ -71,7 +71,7 @@ Optional arguments    Optional Values      Description
 -m                    base, large          Bert models, two options base and large.
  
                                            By default base.                                   
--c                    True, False          Boolean value for cased= True o lower-cased= False
+-ca                    True, False          Boolean value for cased= True o lower-cased= False
 
                                            models. No avalaible for SciBert. By default False.
 -cu                    True, False         Boolean value for using cuda to compute the 
@@ -83,7 +83,7 @@ Optional arguments    Optional Values      Description
         
 Usage example:: 
 
-        python get_embeddings.py -f ./texts/ -s ./bert_embs -bm Bert -d True -st True -l english -sw True -m base -c True -cu True
+        python get_embeddings.py -f ./texts/ -sv ./bert_embs -bm Bert -d True -st True -l english -sw True -m base -ca True -cu True
 
   
   

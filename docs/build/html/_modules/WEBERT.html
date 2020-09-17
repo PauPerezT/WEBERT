@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -28,10 +28,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -158,26 +158,26 @@
 <span class="c1"># -*- coding: utf-8 -*-</span>
 
 <span class="c1">#%% Libraries</span>
-<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="k">import</span> <span class="n">Dataset</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">Dataset</span>
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">csv</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="kn">import</span> <span class="nn">torchvision</span> <span class="k">as</span> <span class="nn">tv</span>
 <span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">gc</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
-<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="k">import</span> <span class="n">DataLoader</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">BertTokenizer</span><span class="p">,</span> <span class="n">BertModel</span>
 
-<span class="kn">from</span> <span class="nn">transformers</span> <span class="k">import</span> <span class="n">BertTokenizer</span><span class="p">,</span> <span class="n">BertModel</span>
-
-<span class="kn">from</span> <span class="nn">tqdm</span> <span class="k">import</span> <span class="n">tqdm</span>
-<span class="kn">from</span> <span class="nn">utils</span> <span class="k">import</span> <span class="n">noPunctuation</span><span class="p">,</span> <span class="n">StopWordsRemoval</span><span class="p">,</span><span class="n">noPunctuationExtra</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">noPunctuation</span><span class="p">,</span> <span class="n">StopWordsRemoval</span><span class="p">,</span><span class="n">noPunctuationExtra</span>
 <span class="kn">import</span> <span class="nn">copy</span>
 
-<span class="kn">from</span> <span class="nn">transformers</span> <span class="k">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">AutoModel</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">kurtosis</span><span class="p">,</span> <span class="n">skew</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">AutoModel</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">kurtosis</span><span class="p">,</span> <span class="n">skew</span>
 
 
 <span class="c1">#%%</span>
@@ -209,7 +209,7 @@
 <span class="sd">    :returns: WEBERT object</span>
 <span class="sd">    &quot;&quot;&quot;</span>    
     
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span> <span class="n">stopwords</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="n">cased</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cuda</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>   
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span> <span class="n">stopwords</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="n">cased</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cuda</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>   
         
 
 
@@ -233,7 +233,7 @@
         
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;bert-&#39;</span><span class="o">+</span><span class="n">model</span><span class="o">+</span><span class="s1">&#39;-&#39;</span><span class="o">+</span><span class="n">cased_str</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">language</span><span class="o">==</span><span class="s1">&#39;spanish&#39;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;bert-&#39;</span><span class="o">+</span><span class="n">model</span><span class="o">+</span><span class="s1">&#39;-multilingual-&#39;</span><span class="o">+</span><span class="n">cased</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;bert-&#39;</span><span class="o">+</span><span class="n">model</span><span class="o">+</span><span class="s1">&#39;-multilingual-&#39;</span><span class="o">+</span><span class="n">cased_str</span>
             
         <span class="k">if</span> <span class="n">cuda</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
@@ -403,7 +403,17 @@
             
             
                    
-            <span class="k">return</span> <span class="n">statisticalMeasures</span></div></div>
+            <span class="k">return</span> <span class="n">statisticalMeasures</span>
+        
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">embeddings</span>
+            <span class="c1">#del bert_embeddings</span>
+            <span class="k">del</span> <span class="n">bert</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_dataloader</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokenized_texts</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+            
+            <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span></div></div>
         
         
 
@@ -426,7 +436,7 @@
 <span class="sd">    :returns: WEBERT object</span>
 <span class="sd">    &quot;&quot;&quot;</span>    
     
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span><span class="n">file</span><span class="p">,</span> <span class="n">stopwords</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="n">cased</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cuda</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>   
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span><span class="n">file</span><span class="p">,</span> <span class="n">stopwords</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;base&#39;</span><span class="p">,</span> <span class="n">cased</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cuda</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>   
         
 
 
@@ -617,7 +627,16 @@
             
             
                    
-            <span class="k">return</span> <span class="n">statisticalMeasures</span></div></div>
+            <span class="k">return</span> <span class="n">statisticalMeasures</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">embeddings</span>
+            <span class="c1">#del bert_embeddings</span>
+            <span class="k">del</span> <span class="n">bert</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_dataloader</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokenized_texts</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+            
+            <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span></div></div>
                         
             
 
@@ -639,7 +658,7 @@
 <span class="sd">    :returns: WEBERT object</span>
 <span class="sd">    &quot;&quot;&quot;</span>    
     
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">stopwords</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cased</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cuda</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>   
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">stopwords</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cased</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cuda</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>   
         
 
 
@@ -829,9 +848,29 @@
             <span class="n">maxBERT</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">wordar</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
             <span class="n">statisticalMeasures</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">meanBERT</span><span class="p">,</span> <span class="n">stdBERT</span><span class="p">,</span> <span class="n">kurtosisBERT</span><span class="p">,</span> <span class="n">skewnessBERT</span><span class="p">,</span><span class="n">minBERT</span><span class="p">,</span> <span class="n">maxBERT</span><span class="p">))</span>
             
+            <span class="k">del</span> <span class="n">embeddings</span>
+            <span class="c1">#del bert_embeddings</span>
+            <span class="k">del</span> <span class="n">bert</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_dataloader</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokenized_texts</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+            
+            
+
+            
             
                    
-            <span class="k">return</span> <span class="n">statisticalMeasures</span></div></div>
+            <span class="k">return</span> <span class="n">statisticalMeasures</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">embeddings</span>
+            <span class="c1">#del bert_embeddings</span>
+            <span class="k">del</span> <span class="n">bert</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_dataloader</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokenized_texts</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+            
+            <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span></div></div>
+            
         
         
             
