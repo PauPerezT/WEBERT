@@ -99,7 +99,7 @@ Optional arguments    Optional Values      Description
     
 Usage Example::
 
-    python get_embeddings.py -f ./texts/ -s ./bert_embs -bm Bert -d True -st True -l english -sw True -m base -c True -cu True
+    python get_embeddings.py -f ./texts/ -sv ./bert_embs -bm Bert -d True -st True -l english -sw True -m base -ca True -cu True
 
 For more information: `Project Documentation <https://webert.readthedocs.io/en/latest/>`_
 
