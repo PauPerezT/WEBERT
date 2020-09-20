@@ -27,6 +27,8 @@ from nltk.corpus import stopwords
 import unicodedata
 import re
 import os
+import argparse
+
 #%% noPunctuation
 def noPunctuation(text):
     
@@ -137,8 +139,18 @@ def HesitationsRemoval(text):
 
     return text
 
-
+#%%
 def create_fold(new_folder):
     
     if os.path.isdir(new_folder)==False:
         os.makedirs(new_folder)
+#%%
+def str2bool(v):
+    if isinstance(v, bool):
+       return v
+    if v.lower() in ('yes', 'True','true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'False', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')

@@ -10,7 +10,7 @@ Created on Mon Jul 27 20:45:40 2020
 
 import argparse
 
-from utils import create_fold
+from utils import create_fold,str2bool
 import csv
 from tqdm import tqdm
 import os
@@ -32,13 +32,15 @@ if __name__ == '__main__':
     parser.add_argument('-f','--files_path', default='./texts/',help='File folder of the set of documents', action="store")
     parser.add_argument('-sv','--save_path', default='./bert_embeddings/',help='Path to save the embeddings', action="store")
     parser.add_argument('-bm','--bert_model', default='Bert',help='Choose between three different BERT models: Bert, Beto and SciBert. By default BERT', choices=('Bert','Beto', 'SciBert'))
-    parser.add_argument('-d','--dynamic', default=True, help='Boolean value to get dynamic features= True. By default True.', choices=(True, False))
-    parser.add_argument('-st','--static', default=False, help='Boolean value to get static features= True from the embeddings such as mean, standard deviation, kurtosis, skeweness, min and max. By default False.', choices=(True, False))
+    parser.add_argument('-d','--dynamic', type=str2bool, nargs='?',const=False, default=True, help='Boolean value to get dynamic features= True. By default True.', choices=(True, False))
+    parser.add_argument('-st','--static', type=str2bool, nargs='?',const=True, default=False, help='Boolean value to get static features= True from the embeddings such as mean, standard deviation, kurtosis, skeweness, min and max. By default False.', choices=(True, False))
     parser.add_argument('-l','--language', default='english',help='Chosen language (only available for BERT model). Here is available only english or spanish. By default english.', choices=('english', 'spanish'))
-    parser.add_argument('-sw','--stopwords', default=False, help='Boolean value, set True if you want to remove stopwords, By default False.' , choices=(True, False))
+    parser.add_argument('-sw','--stopwords', type=str2bool, nargs='?',const=True, default=False, help='Boolean value, set True if you want to remove stopwords, By default False.' , choices=(True, False))
     parser.add_argument('-m','--model', default='base', help='Bert models, two options base and large. By default base.', choices=('base', 'large'))
-    parser.add_argument('-ca','--cased', default=False, help='Boolean value for cased= True o lower-cased= False models. By defaul False.', choices=(True, False))
-    parser.add_argument('-cu','--cuda', default=False, help='Boolean value for using cuda to compute the embeddings (True). By defaul False.', choices=(True, False))
+    parser.add_argument('-ca','--cased', type=str2bool, nargs='?',const=True, default=False, help='Boolean value for cased= True o lower-cased= False models. By defaul False.', choices=(True, False))
+    parser.add_argument('-cu','--cuda', type=str2bool, nargs='?', const=True, default=False, help='Boolean value for using cuda to compute the embeddings (True). By defaul False.', choices=(True, False))
+
+    
 
     #parser.print_help()
     args = parser.parse_args()
