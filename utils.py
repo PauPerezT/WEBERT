@@ -59,7 +59,7 @@ def noPunctuationExtra(text):
     
     texttoP=text
     #Just for this app without '.'
-    forbidden1 = ('?','@', 'Â¿', 'Â¡', '!','/' ,',','(', ')' ,';', '$', ':', '&','…', '...','_','~','\\', '”','"', '“', 'XXXX', '’', '¿', '¡','-','&')
+    forbidden1 = ('\'','?','@', 'Â¿', 'Â¡', '!','/' ,',','(', ')' ,';', '$', ':', '&','…', '...','_','~','\\', '”','"', '“', 'XXXX', '’', '¿', '¡','-','&')
     for i in range (len(forbidden1)):
     
         idx=[n for n in range(len(texttoP)) if text.find(forbidden1[i], n) == n]
