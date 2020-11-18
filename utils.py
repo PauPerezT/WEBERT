@@ -31,13 +31,7 @@ import argparse
 
 #%% noPunctuation
 def noPunctuation(text):
-    
-    """
-    Remove the punctuation
-    :param text: input text
-    :returns: text without punctuations given by the string function
-    """    
-    #
+    #eliminate the punctuation in form of characters
     nopunctuation= [char for char in text if char not in string.punctuation]
 
     #Now eliminate the punctuation and convert into a whole sentence
@@ -45,21 +39,14 @@ def noPunctuation(text):
 
     #Split each words present in the new sentence
     nopunctuation.split()
-    #nopunctuation = re.sub('\W+', '', nopunctuation) 
 
     return nopunctuation
-
+#%%
 def noPunctuationExtra(text):
-        
-    """
-    Remove the other special punctuation characters
-    :param text: input text
-    :returns: text without customized punctuations 
-    """  
     
     texttoP=text
     #Just for this app without '.'
-    forbidden1 = ('\'','?','@', 'Â¿', 'Â¡', '!','/' ,',','(', ')' ,';', '$', ':', '&','…', '...','_','~','\\', '”','"', '“', 'XXXX', '’', '¿', '¡','-','&')
+    forbidden1 = ('\'','°','—','\'','*','º','%', '|', '»','«','?', 'Â¿', 'Â¡', '!','/' ,',','(', ')' ,';', '$', ':', '&','…', '...','_', '”','"', '“', 'XXXX', '’', '¿', '¡','-', '#')
     for i in range (len(forbidden1)):
     
         idx=[n for n in range(len(texttoP)) if text.find(forbidden1[i], n) == n]
@@ -71,35 +58,81 @@ def noPunctuationExtra(text):
                 else:
                     texttoP=texttoP.replace(texttoP[idx[j]],' ')
                 
-
+    #print(texttoP)
     return texttoP
 
+ #%%   
+def removeURL(text):
+
+    text = re.sub('https*://[\w\.]+\.com[\w/\-]+|https*://[\w\.]+\.com|[\w\.]+\.com/[\w/\-]+', lambda x:re.findall('(?<=\://)[\w\.]+\.com|[\w\.]+\.com', x.group())[0], text)
+    text= re.sub('[\w\.]+@+[\w\.]+', '', text)
+    text= re.sub('@+[\w\.]+', '', text)
+    text= re.sub('[\w\.]+@+', '', text)
+
+    #print(text)
+    return text
+
+#%%
+def removeNumbers(text):
+    text = ''.join([i for i in text if not i.isdigit()])
+    
+    return text
+#%%
+def removeEmojis(text):
+    
+    emoji_pattern = re.compile("["
+        u"\U0001F600-\U0001F64F"  # emoticons
+        u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+        u"\U0001F680-\U0001F6FF"  # transport & map symbols
+        u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+                           "]+", flags=re.UNICODE)
+    return emoji_pattern.sub(r'', text) # no emoji
 #%% StopWordsRemoval
-def StopWordsRemoval(text,language='english'):
-            
-    """
-    Remotion of stopwords
-    :param text: input text
-    :param language: input language (english).
-    :returns: text without stopwords
-    """  
+def StopWordsRemoval(text,language='spanish'):
     #Now eliminate stopwords
-    clean_sentence= [word for word in text.split() if word.lower() not in stopwords.words(language)]
+    clean_sentence= [word for word in text.split() if word.lower() not in stopwords.words('spanish')]
     clean_sentence=' '.join(clean_sentence)
 
     return clean_sentence
 
+#%% Lemmatizer
+def Lemmatizer(text,language='spanish'):
+    #nlp = en_core_web_sm.load()
+    nlp = spacy.load('es_core_news_sm')
+    #nlp = spacy.load('es_core_news_md')
+    doc = nlp(text)
+    tokenLemma=[]
+
+    for token in doc:
+        #print(token, token.lemma, token.lemma_)
+        tokenLemma.append(token.lemma_)
+    tokenLemma=' '.join(tokenLemma)
+    return tokenLemma
 
 
+#%% Lemmatizer
+def stemming(text,language='spanish'):
+    
+    #First Tokenaize
+    words = [word for word in wordpunct_tokenize(text)]
+
+    
+    #Stemming
+    porter_stemmer = PorterStemmer()
+    stemmers = [porter_stemmer.stem(word) for word in words]
+    textStemm = [stem for stem in stemmers if stem.isalpha() and len(stem) > 1]
+    
+    textStemm=' '.join(textStemm)
+
+    
+    return textStemm
+
+
+        
+        
 #%% HesitationsRemoval
 
 def HesitationsRemoval(text):
-    """
-    Hesitation removal. Remove this parts of text between [] that are consider hesitation, labels, marks or indicators that not provide relevan information.
-    :param text: input text
-
-    :return text without hesitations
-    """
 
     idx1=[n for n in range(len(text)) if text.find('[', n) == n]
     idx2=[n for n in range(len(text)) if text.find(']', n) == n]
@@ -132,12 +165,49 @@ def HesitationsRemoval(text):
         text=text.replace(text[idx1[0]:idx2[0]+1],"")
         
 
-        idx1=[n for n in range(len(text)) if text.find(' (', n) == n]
+        idx1=[n for n in range(len(text)) if text.find('(', n) == n]
         idx2=[n for n in range(len(text)) if text.find(')', n) == n]
         idxlen=len(idx1)
         idxlen2=len(idx2)
+        
+
+
+
+    text= re.sub(r'\*.*?\*', '', text)
+    text=text.replace('Conversación para sí misma:', '')
+
+        #print(idx1)
+
+
+    #print(text)
+    return text
+
+
+#%% spk1Removal
+
+def spk1Removal(text):
+
+
+
+    text=text.replace('spk1',"")
+    text=text.replace(' AH '," ")
+    text=text.replace(' EH '," ")
 
     return text
+#%% toLowerCase
+
+def toLowerCase(text):
+    text=text.lower()
+    return text
+
+#%% accentRemoval
+    
+
+def accentRemoval(df):
+    trans_tab = dict.fromkeys(map(ord, u'\u0301\u0308'), None)
+    data = unicodedata.normalize('NFKC', unicodedata.normalize('NFKD', df).translate(trans_tab))
+
+    return data
 
 #%%
 def create_fold(new_folder):
