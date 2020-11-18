@@ -105,11 +105,11 @@ class BERT:
     
             text_aux=copy.copy(text)
             text_aux=noPunctuationExtra(text_aux)
-            text_aux=text_aux.replace('.'," [SEP]" )
+            text_aux=text_aux.replace('. '," [SEP]" )
             if text_aux[-5:]=="[SEP]":
                 text_aux=text_aux[0:-5]
             text_org=noPunctuationExtra(text.replace('.',' '))
-
+            text_aux=noPunctuation(text_aux)
             text_org=noPunctuation(text_org)
             
             
@@ -329,10 +329,11 @@ class BETO:
     
             text_aux=copy.copy(text)
             text_aux=noPunctuationExtra(text_aux)
-            text_aux=text_aux.replace('.'," [SEP]" )
+            text_aux=text_aux.replace('. '," [SEP]" )
             if text_aux[-5:]=="[SEP]":
                 text_aux=text_aux[0:-5]
             text_org=noPunctuationExtra(text.replace('.',' '))
+            text_aux=noPunctuation(text_aux)
 
             text_org=noPunctuation(text_org)
             
@@ -552,10 +553,11 @@ class SciBERT:
     
             text_aux=copy.copy(text)
             text_aux=noPunctuationExtra(text_aux)
-            text_aux=text_aux.replace('.'," [SEP]" )
+            text_aux=text_aux.replace('. '," [SEP]" )
             if text_aux[-5:]=="[SEP]":
                 text_aux=text_aux[0:-5]
             text_org=noPunctuationExtra(text.replace('.',' '))
+            text_aux=noPunctuation(text_aux)
 
             text_org=noPunctuation(text_org)
             
