@@ -18,7 +18,7 @@ from torch.utils.data import DataLoader
 from transformers import BertTokenizer, BertModel
 
 from tqdm import tqdm
-from utils import noPunctuation, StopWordsRemoval,noPunctuationExtra
+from utils import noPunctuation, StopWordsRemoval,noPunctuationExtra, removeNumbers
 import copy
 
 from transformers import AutoTokenizer, AutoModel
@@ -105,12 +105,16 @@ class BERT:
     
             text_aux=copy.copy(text)
             text_aux=noPunctuationExtra(text_aux)
-            text_aux=text_aux.replace('. '," [SEP]" )
+            text_aux=text_aux.replace('. '," [SEP] " )
             if text_aux[-5:]=="[SEP]":
                 text_aux=text_aux[0:-5]
+
+            text_aux=removeNumbers(text_aux)
+            text_aux=text_aux.replace('.',' ')
             text_org=noPunctuationExtra(text.replace('.',' '))
-            text_aux=noPunctuation(text_aux)
+            
             text_org=noPunctuation(text_org)
+            text_org=removeNumbers(text_org)
             
             
             if self.stopwords:
@@ -329,13 +333,16 @@ class BETO:
     
             text_aux=copy.copy(text)
             text_aux=noPunctuationExtra(text_aux)
-            text_aux=text_aux.replace('. '," [SEP]" )
+            text_aux=text_aux.replace('. '," [SEP] " )
             if text_aux[-5:]=="[SEP]":
                 text_aux=text_aux[0:-5]
-            text_org=noPunctuationExtra(text.replace('.',' '))
-            text_aux=noPunctuation(text_aux)
 
+            text_aux=removeNumbers(text_aux)
+            text_aux=text_aux.replace('.',' ')
+            text_org=noPunctuationExtra(text.replace('.',' '))
+            
             text_org=noPunctuation(text_org)
+            text_org=removeNumbers(text_org)
             
             
             if self.stopwords:
@@ -553,13 +560,16 @@ class SciBERT:
     
             text_aux=copy.copy(text)
             text_aux=noPunctuationExtra(text_aux)
-            text_aux=text_aux.replace('. '," [SEP]" )
+            text_aux=text_aux.replace('. '," [SEP] " )
             if text_aux[-5:]=="[SEP]":
                 text_aux=text_aux[0:-5]
-            text_org=noPunctuationExtra(text.replace('.',' '))
-            text_aux=noPunctuation(text_aux)
 
+            text_aux=removeNumbers(text_aux)
+            text_aux=text_aux.replace('.',' ')
+            text_org=noPunctuationExtra(text.replace('.',' '))
+            
             text_org=noPunctuation(text_org)
+            text_org=removeNumbers(text_org)
             
             
             if self.stopwords:
