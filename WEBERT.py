@@ -104,9 +104,10 @@ class BERT:
             
     
             text_aux=copy.copy(text)
+            text_aux=removeURL(text_aux)
             text_aux=noPunctuationExtra(text_aux)
             text_aux=removeNumbers(text_aux)
-            text_aux=removeURL(text_aux)
+            
             text_aux=text_aux.replace('. '," [SEP] " )
             if text_aux[-5:]=="[SEP]":
                 text_aux=text_aux[0:-5]
@@ -334,9 +335,10 @@ class BETO:
             
     
             text_aux=copy.copy(text)
+            text_aux=removeURL(text_aux)
             text_aux=noPunctuationExtra(text_aux)
             text_aux=removeNumbers(text_aux)
-            text_aux=removeURL(text_aux)
+            
             text_aux=text_aux.replace('. '," [SEP] " )
             if text_aux[-5:]=="[SEP]":
                 text_aux=text_aux[0:-5]
@@ -563,9 +565,10 @@ class SciBERT:
             
     
             text_aux=copy.copy(text)
+            text_aux=removeURL(text_aux)
             text_aux=noPunctuationExtra(text_aux)
             text_aux=removeNumbers(text_aux)
-            text_aux=removeURL(text_aux)
+            
             text_aux=text_aux.replace('. '," [SEP] " )
             if text_aux[-5:]=="[SEP]":
                 text_aux=text_aux[0:-5]
