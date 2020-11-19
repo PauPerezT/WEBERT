@@ -46,7 +46,7 @@ def noPunctuationExtra(text):
     
     texttoP=text
     #Just for this app without '.'
-    forbidden1 = ('<','>','+','%','=','\'','°','—','\'','*','º','%', '|', '»','«','?', 'Â¿', 'Â¡', '!','/' ,',','(', ')' ,';', '$', ':', '&','…', '...','_', '”','"', '“', 'XXXX', '’', '¿', '¡','-', '#')
+    forbidden1 = ('‘','[',']','<','>','+','%','=','\'','°','—','\'','*','º','%', '|', '»','«','?', 'Â¿', 'Â¡', '!','/' ,',','(', ')' ,';', '$', ':', '&','…', '...','_', '”','"', '“', 'XXXX', '’', '¿', '¡','-', '#','‐')
     for i in range (len(forbidden1)):
     
         idx=[n for n in range(len(texttoP)) if text.find(forbidden1[i], n) == n]
@@ -65,6 +65,8 @@ def noPunctuationExtra(text):
 def removeURL(text):
 
     text = re.sub('https*://[\w\.]+\.com[\w/\-]+|https*://[\w\.]+\.com|[\w\.]+\.com/[\w/\-]+', lambda x:re.findall('(?<=\://)[\w\.]+\.com|[\w\.]+\.com', x.group())[0], text)
+    text = re.sub(r'^https?:\/\/.*[\r\n]*', '', text, flags=re.MULTILINE)
+    text=re.sub(r'http\S+', '', text)
     text= re.sub('[\w\.]+@+[\w\.]+', '', text)
     text= re.sub('@+[\w\.]+', '', text)
     text= re.sub('[\w\.]+@+', '', text)
@@ -128,6 +130,35 @@ def stemming(text,language='spanish'):
     return textStemm
 
 
+#%%
+def botonSel(text):
+    idx1=[n for n in range(len(text)) if text.find('botones seleccion:', n) == n]
+    idx2=[n for n in range(len(text)) if text.find('))', n) == n]
+    idxlen=len(idx1)
+    idxlen2=len(idx2)
+    
+    
+    while idxlen!=0:
+        
+        if idx1[0]<idx2[0]:
+                text=text.replace(text[idx1[0]:idx2[0]+1],"")
+                
+        else:
+                text=text.replace(text[idx1[0]:idx2[1]+1],"")
+                
+        
+        
+    
+        idx1=[n for n in range(len(text)) if text.find('boton enlace:', n) == n]
+        idx2=[n for n in range(len(text)) if text.find('))', n) == n]
+        idxlen=len(idx1)
+        #print(idxlen)
+        idxlen2=len(idx2)
+        #print(idx1)
+
+
+    #print(text)
+    return text
         
         
 #%% HesitationsRemoval
@@ -147,7 +178,7 @@ def HesitationsRemoval(text):
         text=text.replace(text[idx1[0]:idx2[0]+1],"")
         
 
-        idx1=[n for n in range(len(text)) if text.find(' [', n) == n]
+        idx1=[n for n in range(len(text)) if text.find('[', n) == n]
         idx2=[n for n in range(len(text)) if text.find(']', n) == n]
         idxlen=len(idx1)
         idxlen2=len(idx2)
