@@ -172,7 +172,7 @@ networkx @ file:///tmp/build/80754af9/networkx_1594377231366/work
 nltk @ file:///tmp/build/80754af9/nltk_1592496090529/work
 nodeenv==1.3.5
 nose @ file:///tmp/build/80754af9/nose_1594377616924/work
-notebook==6.0.3
+notebook==6.1.5
 numba==0.51.1
 numexpr==2.7.1
 numpy==1.19.1
