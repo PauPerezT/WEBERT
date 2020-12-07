@@ -1,0 +1,13 @@
+torch
+pandas
+scipy
+spacy
+tqdm
+transformers
+nltk
+tqdm
+torchvision
+setuptools
+numpy
+scipy
+scikit_learn

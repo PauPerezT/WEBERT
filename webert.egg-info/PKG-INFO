@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: webert
+Version: 0.0.1
+Summary: Compute dynamic and static BERT embeddings
+Home-page: https://github.com/PauPerezT/WEBERT/
+Author: P.A: Perez-Toro
+Author-email: paula.perezt@udea.edu.co
+License: apache
+Download-URL: https://github.com/PauPerezT/WEBERT//archive/0.0.1.tar.gz
+Description: UNKNOWN
+Keywords: word embeddings,bert,transformers
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: Apache License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
