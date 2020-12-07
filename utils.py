@@ -205,7 +205,7 @@ def HesitationsRemoval(text):
 
 
     text= re.sub(r'\*.*?\*', '', text)
-    text=text.replace('Conversación para sí misma:', '')
+    
 
         #print(idx1)
 
