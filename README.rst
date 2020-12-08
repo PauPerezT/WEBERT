@@ -20,8 +20,8 @@ It was test on linux.
 The code for this project is available at https://github.com/PauPerezT/WEBERT
 
    
-.. image:: https://readthedocs.org/projects/webert/badge/?version=V0.0.2
-:target: https://webert.readthedocs.io/en/V0.0.2/
+.. image:: https://readthedocs.org/projects/webert/badge/?version=v0.0.2
+:target: https://webert.readthedocs.io/en/v0.0.2/
 :alt: Documentation Status
 
 From this repository::
