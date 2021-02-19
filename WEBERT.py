@@ -121,7 +121,7 @@ class BERT:
             
             
             if self.stopwords:
-                text=StopWordsRemoval(text_aux,self.Language)
+                text=StopWordsRemoval(text_aux,self.language)
             self.words.append(text_org.split())
             docs.append(text_aux)
         return docs
