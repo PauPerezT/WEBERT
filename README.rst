@@ -108,9 +108,7 @@ Reference
 
 If you use WEBERT, please cite as follows
 
-@software{p_a_perez_toro_2020_3964244,
-author = {P. A. Perez-Toro}, title = {PauPerezT/WEBERT: Word Embeddings using BERT}, month = jul, year = 2020, publisher = {Zenodo}, version = {V0.0.1}, doi = {10.5281/zenodo.3964244}, url = {https://doi.org/10.5281/zenodo.3964244} }
-
+@misc{papereztoro, author = {P. A. Perez-Toro}, title = {{PauPerezT/WEBERT: Word Embeddings using BERT}}, month = jul, year = 2020, doi = {10.5281/zenodo.3964244}, version = {V0.0.1},  publisher = {Zenodo}, howpublished = "\url{https://doi.org/10.5281/zenodo.3964244}", }
 
 License
 ^^^^^^^^
